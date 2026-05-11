@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Softline Theory — Softness, Structured.</title>
+    <meta name="description" content="Softline Theory creates thoughtfully designed everyday bags that balance softness with structure. Join the waitlist for early access.">
+    <meta name="keywords" content="women bags, casual bags, mini tote, shoulder bag, Singapore, Southeast Asia, premium, minimalist">
+    <meta property="og:title" content="Softline Theory — Softness, Structured.">
+    <meta property="og:description" content="Everyday bags designed for women who want elegance without trying too hard. Join early access.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://softlinetheory.com">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
+    <style>
+        /* ========== RESET & BASE ========== */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+        body {
+            font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: #FAF8F4;
+            color: #2A2A2A;
+            font-weight: 300;
+            line-height: 1.7;
+            font-size: 16px;
+            overflow-x: hidden;
+        }
+        img { max-width: 100%; display: block; }
+        a { text-decoration: none; color: inherit; }
+        button { cursor: pointer; border: none; font-family: inherit; }
+        input { font-family: inherit; }
+
+        /* ========== TYPOGRAPHY ========== */
+        .font-serif { font-family: 'Playfair Display', Georgia, serif; }
+        .font-sans { font-family: 'DM Sans', -apple-system, sans-serif; }
+        h1, h2, h3, h4 { font-family: 'Playfair Display', Georgia, serif; font-weight: 400; line-height: 1.2; }
+        .letter-wide { letter-spacing: 0.12em; }
+        .letter-wider { letter-spacing: 0.2em; }
+
+        /* ========== COLOURS ========== */
+        :root {
+            --matcha: #4A6350;
+            --matcha-light: #5D7A64;
+            --sand: #E8DCC8;
+            --sand-light: #F0E8D8;
+            --tangerine: #E8784A;
+            --offwhite: #FAF8F4;
+            --cream: #F5F1EB;
+            --charcoal: #2A2A2A;
+            --grey: #8A8A8A;
+            --grey-light: #B8B8B8;
+        }
+
+        /* ========== NAVIGATION ========== */
+        .nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+            background: rgba(250, 248, 244, 0.92);
+            backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(74, 99, 80, 0.08);
+            transition: all 0.3s ease;
+        }
+        .nav-inner {
+            max-width: 1200px; margin: 0 auto;
+            padding: 16px 32px;
+            display: flex; align-items: center; justify-content: space-between;
+        }
+        .nav-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 18px; font-weight: 500; color: var(--matcha);
+            letter-spacing: 0.15em; text-transform: uppercase;
+        }
+        .nav-links { display: flex; gap: 32px; align-items: center; }
+        .nav-links a {
+            font-size: 12px; font-weight: 400; letter-spacing: 0.15em;
+            text-transform: uppercase; color: var(--charcoal);
+            transition: color 0.2s ease;
+        }
+        .nav-links a:hover { color: var(--matcha); }
+        .nav-cta {
+            font-size: 11px; font-weight: 500; letter-spacing: 0.15em;
+            text-transform: uppercase; background: var(--matcha); color: white;
+            padding: 10px 24px; border-radius: 2px;
+            transition: background 0.2s ease;
+        }
+        .nav-cta:hover { background: var(--matcha-light); }
+        .nav-mobile-toggle { display: none; background: none; font-size: 20px; color: var(--matcha); }
+
+        /* ========== HERO ========== */
+        .hero {
+            min-height: 100vh; display: flex; align-items: center; justify-content: center;
+            position: relative; overflow: hidden;
+            background: linear-gradient(180deg, var(--offwhite) 0%, var(--cream) 100%);
+            padding: 120px 32px 80px;
+        }
+        .hero-inner {
+            max-width: 1100px; width: 100%; margin: 0 auto;
+            display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;
+        }
+        .hero-content { position: relative; z-index: 2; }
+        .hero-label {
+            font-size: 11px; letter-spacing: 0.25em; text-transform: uppercase;
+            color: var(--tangerine); margin-bottom: 24px; font-weight: 500;
+        }
+        .hero-title {
+            font-size: clamp(42px, 6vw, 72px); font-weight: 400;
+            line-height: 1.05; color: var(--charcoal); margin-bottom: 24px;
+        }
+        .hero-title em { font-style: italic; color: var(--matcha); }
+        .hero-subtitle {
+            font-size: 16px; line-height: 1.8; color: var(--grey);
+            max-width: 420px; margin-bottom: 40px; font-weight: 300;
+        }
+        .hero-buttons { display: flex; gap: 16px; flex-wrap: wrap; }
+        .btn-primary {
+            display: inline-block; padding: 14px 36px; background: var(--matcha);
+            color: white; font-size: 12px; font-weight: 500;
+            letter-spacing: 0.15em; text-transform: uppercase;
+            border-radius: 2px; transition: all 0.2s ease;
+        }
+        .btn-primary:hover { background: var(--matcha-light); transform: translateY(-1px); }
+        .btn-secondary {
+            display: inline-block; padding: 14px 36px; background: transparent;
+            color: var(--matcha); font-size: 12px; font-weight: 500;
+            letter-spacing: 0.15em; text-transform: uppercase;
+            border: 1px solid var(--matcha); border-radius: 2px;
+            transition: all 0.2s ease;
+        }
+        .btn-secondary:hover { background: var(--matcha); color: white; }
+
+        /* Hero decorative elements */
+        .hero-deco-1 {
+            position: absolute; top: 15%; right: 8%;
+            width: 80px; height: 80px; border-radius: 50%;
+            border: 1px solid rgba(232, 120, 74, 0.15);
+            z-index: 1; pointer-events: none;
+        }
+        .hero-deco-2 {
+            position: absolute; bottom: 20%; left: 5%;
+            width: 40px; height: 40px; background: rgba(232, 120, 74, 0.06);
+            border-radius: 50%; z-index: 1; pointer-events: none;
+        }
+
+        /* Hero image placeholder */
+        .hero-visual {
+            position: relative; z-index: 2;
+        }
+        .hero-image-container {
+            position: relative; border-radius: 4px; overflow: hidden;
+            aspect-ratio: 4/5; background: var(--sand-light);
+        }
+        .hero-image-container img {
+            width: 100%; height: 100%; object-fit: cover;
+        }
+        .hero-image-placeholder {
+            width: 100%; height: 100%; display: flex; align-items: center;
+            justify-content: center; flex-direction: column; gap: 12px;
+            color: var(--grey-light);
+        }
+        .hero-image-placeholder svg { opacity: 0.4; }
+        .hero-image-placeholder span { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; }
+
+        /* ========== SECTION BASE ========== */
+        .section {
+            padding: 100px 32px;
+            max-width: 1200px; margin: 0 auto;
+        }
+        .section-full { padding: 100px 0; }
+        .section-label {
+            font-size: 11px; letter-spacing: 0.25em; text-transform: uppercase;
+            color: var(--tangerine); margin-bottom: 16px; font-weight: 500;
+        }
+        .section-title {
+            font-size: clamp(28px, 4vw, 42px); margin-bottom: 16px;
+            color: var(--charcoal);
+        }
+        .section-subtitle {
+            font-size: 15px; color: var(--grey); max-width: 500px;
+            line-height: 1.8; font-weight: 300;
+        }
+        .section-header { margin-bottom: 60px; }
+        .section-header-center { text-align: center; }
+        .section-header-center .section-subtitle { margin: 0 auto; }
+
+        /* ========== COLLECTION ========== */
+        .collection-bg { background: white; }
+        .collection-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+        }
+        .product-card {
+            position: relative; overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+        .product-card:hover { transform: translateY(-4px); }
+        .product-image {
+            aspect-ratio: 3/4; background: var(--cream);
+            border-radius: 3px; overflow: hidden; position: relative;
+            margin-bottom: 16px;
+        }
+        .product-image img { width: 100%; height: 100%; object-fit: cover; }
+        .product-image-placeholder {
+            width: 100%; height: 100%; display: flex; align-items: center;
+            justify-content: center; color: var(--grey-light);
+        }
+        .product-badge {
+            position: absolute; top: 12px; left: 12px;
+            background: white; padding: 6px 12px; font-size: 10px;
+            letter-spacing: 0.12em; text-transform: uppercase;
+            font-weight: 500; color: var(--matcha); border-radius: 1px;
+        }
+        .product-wishlist {
+            position: absolute; top: 12px; right: 12px;
+            width: 36px; height: 36px; background: white; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            transition: all 0.2s ease; cursor: pointer;
+        }
+        .product-wishlist:hover { background: var(--matcha); }
+        .product-wishlist:hover svg { stroke: white; }
+        .product-wishlist.active { background: var(--tangerine); }
+        .product-wishlist.active svg { stroke: white; fill: var(--tangerine); }
+        .product-name {
+            font-family: 'Playfair Display', serif; font-size: 16px;
+            font-weight: 400; color: var(--charcoal); margin-bottom: 6px;
+        }
+        .product-desc {
+            font-size: 13px; color: var(--grey); font-weight: 300;
+            margin-bottom: 8px; line-height: 1.6;
+        }
+        .product-status {
+            font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase;
+            color: var(--matcha); font-weight: 400;
+        }
+
+        /* ========== BRAND STORY ========== */
+        .story-bg { background: var(--cream); }
+        .story-inner {
+            max-width: 1200px; margin: 0 auto;
+            display: grid; grid-template-columns: 1fr 1fr; gap: 80px;
+            align-items: center; padding: 100px 32px;
+        }
+        .story-image {
+            aspect-ratio: 3/4; background: var(--sand);
+            border-radius: 3px; overflow: hidden;
+        }
+        .story-image img { width: 100%; height: 100%; object-fit: cover; }
+        .story-image-placeholder {
+            width: 100%; height: 100%; display: flex; align-items: center;
+            justify-content: center; color: var(--grey-light); flex-direction: column; gap: 8px;
+        }
+        .story-content { padding: 20px 0; }
+        .story-quote {
+            font-family: 'Playfair Display', serif; font-size: clamp(22px, 3vw, 30px);
+            line-height: 1.5; color: var(--charcoal); font-weight: 400;
+            margin-bottom: 32px; font-style: italic;
+        }
+        .story-text {
+            font-size: 15px; color: var(--grey); line-height: 1.9;
+            font-weight: 300; max-width: 440px;
+        }
+        .story-divider {
+            width: 48px; height: 1px; background: var(--tangerine);
+            margin: 32px 0;
+        }
+
+        /* ========== WAITLIST / EMAIL CAPTURE ========== */
+        .waitlist-bg {
+            background: var(--matcha);
+            color: white;
+        }
+        .waitlist-inner {
+            max-width: 560px; margin: 0 auto; text-align: center;
+            padding: 100px 32px;
+        }
+        .waitlist-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(28px, 4vw, 38px); margin-bottom: 16px;
+            color: white;
+        }
+        .waitlist-subtitle {
+            font-size: 15px; line-height: 1.8; opacity: 0.85;
+            margin-bottom: 40px; font-weight: 300;
+        }
+        .waitlist-form {
+            display: flex; flex-direction: column; gap: 12px;
+            max-width: 420px; margin: 0 auto;
+        }
+        .waitlist-form input {
+            padding: 14px 20px; border: 1px solid rgba(255,255,255,0.2);
+            background: rgba(255,255,255,0.08); color: white;
+            font-size: 14px; font-weight: 300; border-radius: 2px;
+            transition: all 0.2s ease; outline: none;
+        }
+        .waitlist-form input::placeholder { color: rgba(255,255,255,0.5); }
+        .waitlist-form input:focus { border-color: rgba(255,255,255,0.5); background: rgba(255,255,255,0.12); }
+        .waitlist-form button {
+            padding: 16px 32px; background: white; color: var(--matcha);
+            font-size: 12px; font-weight: 600; letter-spacing: 0.18em;
+            text-transform: uppercase; border-radius: 2px;
+            transition: all 0.2s ease;
+        }
+        .waitlist-form button:hover { background: var(--sand); transform: translateY(-1px); }
+        .waitlist-disclaimer {
+            font-size: 12px; opacity: 0.5; margin-top: 16px;
+            font-weight: 300;
+        }
+        .waitlist-success {
+            display: none; text-align: center; padding: 20px 0;
+        }
+        .waitlist-success.show { display: block; }
+        .waitlist-success h4 {
+            font-family: 'Playfair Display', serif; font-size: 22px;
+            margin-bottom: 8px; color: white;
+        }
+        .waitlist-success p { font-size: 14px; opacity: 0.7; }
+
+        /* ========== SOCIAL PROOF ========== */
+        .proof-inner {
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px;
+            text-align: center; padding: 80px 32px;
+            max-width: 900px; margin: 0 auto;
+        }
+        .proof-item { padding: 20px; }
+        .proof-number {
+            font-family: 'Playfair Display', serif; font-size: 32px;
+            color: var(--matcha); margin-bottom: 8px; font-weight: 500;
+        }
+        .proof-label {
+            font-size: 12px; letter-spacing: 0.15em; text-transform: uppercase;
+            color: var(--grey); font-weight: 400;
+        }
+        .proof-divider {
+            width: 32px; height: 1px; background: var(--tangerine);
+            margin: 12px auto 0;
+        }
+
+        /* ========== INSTAGRAM / LOOKBOOK ========== */
+        .lookbook-bg { background: white; }
+        .lookbook-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 4px;
+            max-width: 1200px; margin: 0 auto;
+        }
+        .lookbook-item {
+            aspect-ratio: 1; background: var(--cream); overflow: hidden;
+            position: relative; cursor: pointer;
+        }
+        .lookbook-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; }
+        .lookbook-item:hover img { transform: scale(1.03); }
+        .lookbook-placeholder {
+            width: 100%; height: 100%; display: flex; align-items: center;
+            justify-content: center; color: var(--grey-light);
+            flex-direction: column; gap: 8px;
+        }
+        .lookbook-overlay {
+            position: absolute; inset: 0; background: rgba(74, 99, 80, 0.0);
+            transition: background 0.3s ease;
+            display: flex; align-items: center; justify-content: center;
+        }
+        .lookbook-item:hover .lookbook-overlay { background: rgba(74, 99, 80, 0.08); }
+
+        /* ========== FOOTER ========== */
+        .footer {
+            background: var(--charcoal); color: white;
+            padding: 80px 32px 40px;
+        }
+        .footer-inner {
+            max-width: 1200px; margin: 0 auto;
+            display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 60px;
+        }
+        .footer-brand-name {
+            font-family: 'Playfair Display', serif; font-size: 20px;
+            letter-spacing: 0.12em; text-transform: uppercase;
+            margin-bottom: 16px;
+        }
+        .footer-brand-desc {
+            font-size: 13px; opacity: 0.5; line-height: 1.8;
+            font-weight: 300; max-width: 320px; margin-bottom: 24px;
+        }
+        .footer-social { display: flex; gap: 16px; }
+        .footer-social a {
+            width: 36px; height: 36px; border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            transition: all 0.2s ease;
+        }
+        .footer-social a:hover { border-color: var(--tangerine); }
+        .footer-social a:hover svg { stroke: var(--tangerine); }
+        .footer-heading {
+            font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase;
+            margin-bottom: 20px; font-weight: 500;
+        }
+        .footer-links { display: flex; flex-direction: column; gap: 12px; }
+        .footer-links a {
+            font-size: 13px; opacity: 0.6; font-weight: 300;
+            transition: opacity 0.2s ease;
+        }
+        .footer-links a:hover { opacity: 1; }
+        .footer-email-form { display: flex; gap: 8px; margin-top: 12px; }
+        .footer-email-form input {
+            flex: 1; padding: 10px 16px; background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.15); color: white;
+            font-size: 12px; border-radius: 2px; outline: none;
+        }
+        .footer-email-form input::placeholder { color: rgba(255,255,255,0.4); }
+        .footer-email-form input:focus { border-color: rgba(255,255,255,0.35); }
+        .footer-email-form button {
+            padding: 10px 20px; background: var(--matcha); color: white;
+            font-size: 11px; font-weight: 500; letter-spacing: 0.1em;
+            text-transform: uppercase; border-radius: 2px;
+            transition: background 0.2s ease;
+        }
+        .footer-email-form button:hover { background: var(--matcha-light); }
+        .footer-bottom {
+            max-width: 1200px; margin: 48px auto 0; padding-top: 24px;
+            border-top: 1px solid rgba(255,255,255,0.08);
+            display: flex; justify-content: space-between; align-items: center;
+        }
+        .footer-copy { font-size: 11px; opacity: 0.35; font-weight: 300; }
+        .footer-location {
+            font-size: 11px; opacity: 0.35; font-weight: 300;
+            letter-spacing: 0.08em;
+        }
+
+        /* ========== EXIT INTENT POPUP ========== */
+        .popup-overlay {
+            position: fixed; inset: 0; z-index: 1000;
+            background: rgba(0, 0, 0, 0.35); backdrop-filter: blur(4px);
+            display: flex; align-items: center; justify-content: center;
+            opacity: 0; visibility: hidden;
+            transition: all 0.4s ease;
+        }
+        .popup-overlay.active { opacity: 1; visibility: visible; }
+        .popup {
+            background: var(--offwhite); max-width: 440px; width: 90%;
+            border-radius: 6px; padding: 48px 40px; position: relative;
+            box-shadow: 0 24px 64px rgba(0,0,0,0.12);
+            transform: translateY(20px); transition: transform 0.4s ease;
+            text-align: center;
+        }
+        .popup-overlay.active .popup { transform: translateY(0); }
+        .popup-close {
+            position: absolute; top: 16px; right: 16px;
+            width: 32px; height: 32px; background: none;
+            display: flex; align-items: center; justify-content: center;
+            color: var(--grey); font-size: 18px; transition: color 0.2s ease;
+        }
+        .popup-close:hover { color: var(--charcoal); }
+        .popup-accent {
+            width: 32px; height: 2px; background: var(--tangerine);
+            margin: 0 auto 24px;
+        }
+        .popup-title {
+            font-family: 'Playfair Display', serif; font-size: 24px;
+            color: var(--matcha); margin-bottom: 12px;
+        }
+        .popup-text {
+            font-size: 14px; color: var(--grey); line-height: 1.7;
+            font-weight: 300; margin-bottom: 24px;
+        }
+        .popup-form { display: flex; flex-direction: column; gap: 10px; }
+        .popup-form input {
+            padding: 13px 18px; border: 1px solid var(--sand);
+            background: white; font-size: 14px; font-weight: 300;
+            border-radius: 2px; outline: none;
+            transition: border-color 0.2s ease;
+        }
+        .popup-form input:focus { border-color: var(--matcha); }
+        .popup-form button {
+            padding: 14px; background: var(--matcha); color: white;
+            font-size: 12px; font-weight: 500; letter-spacing: 0.15em;
+            text-transform: uppercase; border-radius: 2px;
+            transition: background 0.2s ease;
+        }
+        .popup-form button:hover { background: var(--matcha-light); }
+        .popup-disclaimer {
+            font-size: 11px; color: var(--grey-light); margin-top: 12px;
+            font-weight: 300;
+        }
+        .popup-success {
+            display: none;
+        }
+        .popup-success.show { display: block; }
+        .popup-success h4 {
+            font-family: 'Playfair Display', serif; font-size: 20px;
+            color: var(--matcha); margin-bottom: 8px;
+        }
+        .popup-success p { font-size: 13px; color: var(--grey); }
+
+        /* ========== RESPONSIVE ========== */
+        @media (max-width: 1024px) {
+            .hero-inner { grid-template-columns: 1fr; gap: 40px; text-align: center; }
+            .hero-subtitle { margin: 0 auto 40px; }
+            .hero-buttons { justify-content: center; }
+            .hero-visual { max-width: 500px; margin: 0 auto; }
+            .hero-deco-1, .hero-deco-2 { display: none; }
+            .collection-grid { grid-template-columns: repeat(2, 1fr); }
+            .story-inner { grid-template-columns: 1fr; gap: 40px; }
+            .story-image { max-width: 500px; margin: 0 auto; }
+            .story-content { text-align: center; }
+            .story-text { margin: 0 auto; }
+            .story-divider { margin: 32px auto; }
+            .lookbook-grid { grid-template-columns: repeat(3, 1fr); }
+            .footer-inner { grid-template-columns: 1fr 1fr; }
+        }
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .nav-mobile-toggle { display: block; }
+            .hero { padding: 100px 24px 60px; min-height: auto; }
+            .hero-title { font-size: 36px; }
+            .section { padding: 60px 24px; }
+            .collection-grid { grid-template-columns: 1fr; max-width: 400px; margin: 0 auto; }
+            .proof-inner { grid-template-columns: 1fr; gap: 24px; }
+            .lookbook-grid { grid-template-columns: repeat(2, 1fr); }
+            .footer-inner { grid-template-columns: 1fr; gap: 40px; }
+            .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
+            .hero-buttons { flex-direction: column; align-items: center; }
+            .btn-primary, .btn-secondary { width: 100%; max-width: 280px; text-align: center; }
+            .waitlist-inner { padding: 60px 24px; }
+            .popup { padding: 36px 28px; }
+        }
+
+        /* ========== MOBILE NAV MENU ========== */
+        .mobile-nav {
+            position: fixed; inset: 0; z-index: 99;
+            background: var(--offwhite); display: flex; align-items: center;
+            justify-content: center; opacity: 0; visibility: hidden;
+            transition: all 0.3s ease;
+        }
+        .mobile-nav.active { opacity: 1; visibility: visible; }
+        .mobile-nav-links {
+            display: flex; flex-direction: column; align-items: center; gap: 28px;
+        }
+        .mobile-nav-links a {
+            font-size: 14px; letter-spacing: 0.2em; text-transform: uppercase;
+            color: var(--charcoal);
+        }
+        .mobile-nav-close {
+            position: absolute; top: 20px; right: 24px;
+            background: none; font-size: 24px; color: var(--matcha);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===== NAVIGATION ===== -->
+    <nav class="nav" id="nav">
+        <div class="nav-inner">
+            <a href="#" class="nav-logo">Softline Theory</a>
+            <div class="nav-links">
+                <a href="#collection">Collection</a>
+                <a href="#story">Our Story</a>
+                <a href="#lookbook">Lookbook</a>
+                <a href="#waitlist" class="nav-cta">Join Waitlist</a>
+            </div>
+            <button class="nav-mobile-toggle" onclick="toggleMobileNav()" aria-label="Menu">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Nav -->
+    <div class="mobile-nav" id="mobileNav">
+        <button class="mobile-nav-close" onclick="toggleMobileNav()">×</button>
+        <div class="mobile-nav-links">
+            <a href="#collection" onclick="toggleMobileNav()">Collection</a>
+            <a href="#story" onclick="toggleMobileNav()">Our Story</a>
+            <a href="#lookbook" onclick="toggleMobileNav()">Lookbook</a>
+            <a href="#waitlist" onclick="toggleMobileNav()" style="color:var(--matcha);">Join Waitlist</a>
+        </div>
+    </div>
+
+    <!-- ===== HERO SECTION ===== -->
+    <section class="hero" id="hero">
+        <div class="hero-deco-1"></div>
+        <div class="hero-deco-2"></div>
+        <div class="hero-inner">
+            <div class="hero-content">
+                <p class="hero-label">Launching Soon — Southeast Asia</p>
+                <h1 class="hero-title">Softness,<br><em>Structured.</em></h1>
+                <p class="hero-subtitle">Everyday bags designed for women who want elegance without trying too hard.</p>
+                <div class="hero-buttons">
+                    <a href="#waitlist" class="btn-primary">Join Early Access</a>
+                    <a href="#collection" class="btn-secondary">Preview Collection</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="hero-image-container">
+                    <!-- Replace with actual hero product image -->
+                    <div class="hero-image-placeholder">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                        <span>Hero Image</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FEATURED COLLECTION ===== -->
+    <section class="collection-bg section-full" id="collection">
+        <div class="section">
+            <div class="section-header section-header-center">
+                <p class="section-label">The Collection</p>
+                <h2 class="section-title">Quietly Considered</h2>
+                <p class="section-subtitle">Each piece is designed to feel effortless — the bag you reach for without thinking.</p>
+            </div>
+            <div class="collection-grid">
+
+                <!-- Product 1 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <div class="product-image-placeholder">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                        </div>
+                        <span class="product-badge">New</span>
+                        <button class="product-wishlist" onclick="toggleWishlist(this)" aria-label="Add to wishlist">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--charcoal)" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                        </button>
+                    </div>
+                    <h3 class="product-name">The Bow Mini Tote</h3>
+                    <p class="product-desc">Structured mini tote with satin bow detail. Faux leather in soft cream.</p>
+                    <span class="product-status">Launching Soon</span>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <div class="product-image-placeholder">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                        </div>
+                        <span class="product-badge">New</span>
+                        <button class="product-wishlist" onclick="toggleWishlist(this)" aria-label="Add to wishlist">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--charcoal)" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                        </button>
+                    </div>
+                    <h3 class="product-name">The Charm Shoulder</h3>
+                    <p class="product-desc">Slim shoulder bag with detachable charm. Canvas and faux leather in matcha.</p>
+                    <span class="product-status">Launching Soon</span>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <div class="product-image-placeholder">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                        </div>
+                        <span class="product-badge">New</span>
+                        <button class="product-wishlist" onclick="toggleWishlist(this)" aria-label="Add to wishlist">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--charcoal)" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                        </button>
+                    </div>
+                    <h3 class="product-name">The Everyday Pouch</h3>
+                    <p class="product-desc">Soft-structured crossbody in blush pink. Woven texture with gold clasp.</p>
+                    <span class="product-status">Launching Soon</span>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <div class="product-image-placeholder">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                        </div>
+                        <span class="product-badge">New</span>
+                        <button class="product-wishlist" onclick="toggleWishlist(this)" aria-label="Add to wishlist">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--charcoal)" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                        </button>
+                    </div>
+                    <h3 class="product-name">The Luna Bucket</h3>
+                    <p class="product-desc">Relaxed bucket silhouette in warm sand. Adjustable strap with brass hardware.</p>
+                    <span class="product-status">Launching Soon</span>
+                </div>
+
+                <!-- Product 5 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <div class="product-image-placeholder">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                        </div>
+                        <span class="product-badge">New</span>
+                        <button class="product-wishlist" onclick="toggleWishlist(this)" aria-label="Add to wishlist">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--charcoal)" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                        </button>
+                    </div>
+                    <h3 class="product-name">The Petal Flap</h3>
+                    <p class="product-desc">Compact flap bag with curved silhouette. Faux pebbled leather in lilac mist.</p>
+                    <span class="product-status">Launching Soon</span>
+                </div>
+
+                <!-- Product 6 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <div class="product-image-placeholder">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                        </div>
+                        <span class="product-badge">New</span>
+                        <button class="product-wishlist" onclick="toggleWishlist(this)" aria-label="Add to wishlist">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--charcoal)" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                        </button>
+                    </div>
+                    <h3 class="product-name">The Ribbon Crossbody</h3>
+                    <p class="product-desc">Minimal crossbody with ribbon-woven strap. Canvas in dusty rose.</p>
+                    <span class="product-status">Launching Soon</span>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== BRAND STORY ===== -->
+    <section class="story-bg section-full" id="story">
+        <div class="story-inner">
+            <div class="story-image">
+                <!-- Replace with actual brand story image -->
+                <div class="story-image-placeholder">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                    <span style="font-size:11px;letter-spacing:0.1em;text-transform:uppercase;">Brand Story Image</span>
+                </div>
+            </div>
+            <div class="story-content">
+                <p class="section-label">Our Philosophy</p>
+                <p class="story-quote">Softline Theory creates thoughtfully designed everyday bags that balance softness with structure — made for quiet confidence, warm routines, and effortless dressing.</p>
+                <div class="story-divider"></div>
+                <p class="story-text">We believe the best accessories don't demand attention — they earn it. Each bag is designed in Singapore with a focus on considered materials, feminine details, and silhouettes that transition from morning coffee to evening plans without a second thought.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== EMAIL WAITLIST ===== -->
+    <section class="waitlist-bg section-full" id="waitlist">
+        <div class="waitlist-inner">
+            <p class="section-label" style="color:rgba(255,255,255,0.5);">Exclusive Access</p>
+            <h2 class="waitlist-title">Unlock Early Access</h2>
+            <p class="waitlist-subtitle">Join the waitlist for a potential launch-day offer of up to 50% off selected styles.</p>
+            <form class="waitlist-form" id="waitlistForm" onsubmit="handleWaitlist(event)">
+                <input type="text" name="firstName" placeholder="First Name" required>
+                <input type="email" name="email" placeholder="Email Address" required>
+                <button type="submit">Reserve My Access</button>
+            </form>
+            <div class="waitlist-success" id="waitlistSuccess">
+                <h4 class="font-serif">You're on the list.</h4>
+                <p>We'll be in touch when early access opens.</p>
+            </div>
+            <p class="waitlist-disclaimer">Limited early access invitations available.</p>
+        </div>
+    </section>
+
+    <!-- ===== SOCIAL PROOF ===== -->
+    <section class="section-full" id="proof">
+        <div class="proof-inner">
+            <div class="proof-item">
+                <p class="proof-number">2,000+</p>
+                <p class="proof-label">Early Signups</p>
+                <div class="proof-divider"></div>
+            </div>
+            <div class="proof-item">
+                <p class="proof-number">SEA</p>
+                <p class="proof-label">Launching Across<br>Southeast Asia</p>
+                <div class="proof-divider"></div>
+            </div>
+            <div class="proof-item">
+                <p class="proof-number">🇸🇬</p>
+                <p class="proof-label">Singapore<br>Designed</p>
+                <div class="proof-divider"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== INSTAGRAM / LOOKBOOK ===== -->
+    <section class="lookbook-bg section-full" id="lookbook">
+        <div class="section">
+            <div class="section-header section-header-center">
+                <p class="section-label">@softlinetheory</p>
+                <h2 class="section-title">The Lookbook</h2>
+                <p class="section-subtitle">A glimpse into the world we're building.</p>
+            </div>
+            <div class="lookbook-grid">
+                <div class="lookbook-item">
+                    <div class="lookbook-placeholder">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                    </div>
+                    <div class="lookbook-overlay"></div>
+                </div>
+                <div class="lookbook-item">
+                    <div class="lookbook-placeholder">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                    </div>
+                    <div class="lookbook-overlay"></div>
+                </div>
+                <div class="lookbook-item">
+                    <div class="lookbook-placeholder">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                    </div>
+                    <div class="lookbook-overlay"></div>
+                </div>
+                <div class="lookbook-item">
+                    <div class="lookbook-placeholder">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                    </div>
+                    <div class="lookbook-overlay"></div>
+                </div>
+                <div class="lookbook-item">
+                    <div class="lookbook-placeholder">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                    </div>
+                    <div class="lookbook-overlay"></div>
+                </div>
+                <div class="lookbook-item">
+                    <div class="lookbook-placeholder">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                    </div>
+                    <div class="lookbook-overlay"></div>
+                </div>
+                <div class="lookbook-item">
+                    <div class="lookbook-placeholder">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                    </div>
+                    <div class="lookbook-overlay"></div>
+                </div>
+                <div class="lookbook-item">
+                    <div class="lookbook-placeholder">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                    </div>
+                    <div class="lookbook-overlay"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer" id="footer">
+        <div class="footer-inner">
+            <div>
+                <p class="footer-brand-name">Softline Theory</p>
+                <p class="footer-brand-desc">Thoughtfully designed everyday bags. Softness, structured. Singapore-designed for women across Southeast Asia.</p>
+                <div class="footer-social">
+                    <a href="#" aria-label="Instagram">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="white" stroke="none"/></svg>
+                    </a>
+                    <a href="#" aria-label="TikTok">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg>
+                    </a>
+                </div>
+            </div>
+            <div>
+                <p class="footer-heading">Quick Links</p>
+                <div class="footer-links">
+                    <a href="#collection">Collection</a>
+                    <a href="#story">Our Story</a>
+                    <a href="#lookbook">Lookbook</a>
+                    <a href="#waitlist">Early Access</a>
+                </div>
+            </div>
+            <div>
+                <p class="footer-heading">Stay in Touch</p>
+                <p style="font-size:13px;opacity:0.5;font-weight:300;line-height:1.7;margin-bottom:12px;">Get launch updates and early access invitations.</p>
+                <form class="footer-email-form" onsubmit="handleFooterEmail(event)">
+                    <input type="email" placeholder="Your email" required>
+                    <button type="submit">Join</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p class="footer-copy">&copy; 2026 Softline Theory. All rights reserved.</p>
+            <p class="footer-location">Launching Soon in Southeast Asia</p>
+        </div>
+    </footer>
+
+    <!-- ===== EXIT INTENT POPUP ===== -->
+    <div class="popup-overlay" id="exitPopup">
+        <div class="popup">
+            <button class="popup-close" onclick="closePopup()" aria-label="Close">&times;</button>
+            <div class="popup-accent"></div>
+            <h3 class="popup-title">Wait — Before You Go</h3>
+            <p class="popup-text">We're selecting a small group for early launch access and potential 50% off selected bags.</p>
+            <form class="popup-form" id="popupForm" onsubmit="handlePopup(event)">
+                <input type="email" placeholder="Email Address" required>
+                <button type="submit">Join Early Access</button>
+            </form>
+            <div class="popup-success" id="popupSuccess">
+                <h4 class="font-serif">You're in.</h4>
+                <p>We'll reach out when early access opens.</p>
+            </div>
+            <p class="popup-disclaimer">No spam. Launch updates only.</p>
+        </div>
+    </div>
+
+    <!-- ===== SCRIPTS ===== -->
+    <script>
+        // ===== POPUP LOGIC =====
+        let popupShown = false;
+
+        function showPopup() {
+            if (popupShown) return;
+            popupShown = true;
+            document.getElementById('exitPopup').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closePopup() {
+            document.getElementById('exitPopup').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        // Show popup after 8 seconds
+        setTimeout(function() {
+            showPopup();
+        }, 8000);
+
+        // Exit intent (desktop only)
+        document.addEventListener('mouseleave', function(e) {
+            if (e.clientY < 0 && !popupShown) {
+                showPopup();
+            }
+        });
+
+        // Close popup on overlay click
+        document.getElementById('exitPopup').addEventListener('click', function(e) {
+            if (e.target === this) closePopup();
+        });
+
+        // Close popup on Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closePopup();
+        });
+
+        // ===== FORM HANDLERS =====
+        function handleWaitlist(e) {
+            e.preventDefault();
+            var form = document.getElementById('waitlistForm');
+            var success = document.getElementById('waitlistSuccess');
+            form.style.display = 'none';
+            success.classList.add('show');
+            // TODO: Replace with actual email capture API (e.g., Mailchimp, ConvertKit, or custom backend)
+            console.log('Waitlist signup:', new FormData(form).get('firstName'), new FormData(form).get('email'));
+        }
+
+        function handlePopup(e) {
+            e.preventDefault();
+            var form = document.getElementById('popupForm');
+            var success = document.getElementById('popupSuccess');
+            form.style.display = 'none';
+            success.classList.add('show');
+            setTimeout(closePopup, 2500);
+            // TODO: Replace with actual email capture API
+            console.log('Popup signup:', new FormData(form).get('email'));
+        }
+
+        function handleFooterEmail(e) {
+            e.preventDefault();
+            var input = e.target.querySelector('input');
+            input.value = '';
+            input.placeholder = 'Thank you!';
+            setTimeout(function() { input.placeholder = 'Your email'; }, 2000);
+            // TODO: Replace with actual email capture API
+            console.log('Footer signup:', new FormData(e.target).get('email'));
+        }
+
+        // ===== WISHLIST TOGGLE =====
+        function toggleWishlist(btn) {
+            btn.classList.toggle('active');
+        }
+
+        // ===== MOBILE NAV =====
+        function toggleMobileNav() {
+            document.getElementById('mobileNav').classList.toggle('active');
+            document.body.style.overflow = document.getElementById('mobileNav').classList.contains('active') ? 'hidden' : '';
+        }
+
+        // ===== NAV SCROLL EFFECT =====
+        var lastScroll = 0;
+        window.addEventListener('scroll', function() {
+            var nav = document.getElementById('nav');
+            var scroll = window.pageYOffset;
+            if (scroll > 100) {
+                nav.style.boxShadow = '0 1px 8px rgba(0,0,0,0.04)';
+            } else {
+                nav.style.boxShadow = 'none';
+            }
+            lastScroll = scroll;
+        });
+    </script>
+
+</body>
+</html>
