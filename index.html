@@ -265,6 +265,59 @@
         .size-tag:hover, .size-tag.active {
             border-color: var(--matcha); color: var(--matcha);
         }
+        .product-vote-btn {
+            display: block; width: 100%; padding: 10px 0;
+            background: var(--matcha); color: white;
+            font-size: 11px; font-weight: 500; letter-spacing: 0.15em;
+            text-transform: uppercase; border-radius: 2px;
+            margin-top: 12px; transition: all 0.2s ease;
+            text-align: center;
+        }
+        .product-vote-btn:hover { background: var(--matcha-light); transform: translateY(-1px); }
+        .product-vote-btn.voted {
+            background: var(--tangerine); pointer-events: none;
+        }
+        .product-vote-btn.voted::after { content: " ✓"; }
+        .vote-count {
+            font-size: 11px; color: var(--grey); font-weight: 300;
+            margin-top: 4px; text-align: center;
+        }
+        .vote-modal-overlay {
+            position: fixed; inset: 0; z-index: 1000;
+            background: rgba(0,0,0,0.4); backdrop-filter: blur(4px);
+            display: flex; align-items: center; justify-content: center;
+            opacity: 0; visibility: hidden; transition: all 0.3s ease;
+        }
+        .vote-modal-overlay.active { opacity: 1; visibility: visible; }
+        .vote-modal {
+            background: var(--offwhite); max-width: 420px; width: 90%;
+            border-radius: 6px; padding: 40px; text-align: center;
+            box-shadow: 0 24px 64px rgba(0,0,0,0.15);
+        }
+        .vote-modal h4 {
+            font-family: 'Playfair Display', serif; font-size: 20px;
+            color: var(--matcha); margin-bottom: 8px;
+        }
+        .vote-modal p {
+            font-size: 13px; color: var(--grey); margin-bottom: 20px; line-height: 1.6;
+        }
+        .vote-modal input {
+            width: 100%; padding: 12px 16px; border: 1px solid var(--sand);
+            font-size: 14px; border-radius: 2px; outline: none; margin-bottom: 12px;
+            font-weight: 300;
+        }
+        .vote-modal input:focus { border-color: var(--matcha); }
+        .vote-modal button {
+            width: 100%; padding: 14px; background: var(--matcha); color: white;
+            font-size: 12px; font-weight: 500; letter-spacing: 0.15em;
+            text-transform: uppercase; border-radius: 2px; transition: background 0.2s;
+        }
+        .vote-modal button:hover { background: var(--matcha-light); }
+        .vote-modal .skip {
+            display: block; margin-top: 12px; font-size: 12px;
+            color: var(--grey); cursor: pointer;
+        }
+        .vote-modal .skip:hover { color: var(--matcha); }
 
         /* ========== BRAND STORY ========== */
         .story-bg { background: var(--cream); }
@@ -660,6 +713,8 @@
                         <span class="size-tag">Mini</span>
                     </div>
                     <span class="product-status">Launching Soon</span>
+                    <button class="product-vote-btn" data-product="lace-bow-tote" onclick="handleVote(this)">Vote for This</button>
+                    <div class="vote-count" data-vote-count="lace-bow-tote"></div>
                 </div>
 
                 <!-- Product 2: Canvas Bear Tote -->
@@ -684,6 +739,8 @@
                         <span class="size-tag">Mini</span>
                     </div>
                     <span class="product-status">Launching Soon</span>
+                    <button class="product-vote-btn" data-product="canvas-bear-tote" onclick="handleVote(this)">Vote for This</button>
+                    <div class="vote-count" data-vote-count="canvas-bear-tote"></div>
                 </div>
 
                 <!-- Product 3: Chain Hobo -->
@@ -701,6 +758,8 @@
                         <span class="color-swatch" style="background:#F5F0E8;" title="Cream"></span>
                     </div>
                     <span class="product-status">Launching Soon</span>
+                    <button class="product-vote-btn" data-product="chain-hobo" onclick="handleVote(this)">Vote for This</button>
+                    <div class="vote-count" data-vote-count="chain-hobo"></div>
                 </div>
 
                 <!-- Product 4: Winged Tote -->
@@ -718,6 +777,8 @@
                         <span class="color-swatch" style="background:#F5F0E8;" title="Cream"></span>
                     </div>
                     <span class="product-status">Launching Soon</span>
+                    <button class="product-vote-btn" data-product="winged-tote" onclick="handleVote(this)">Vote for This</button>
+                    <div class="vote-count" data-vote-count="winged-tote"></div>
                 </div>
 
                 <!-- Product 5: Turn-Lock Flap -->
@@ -735,6 +796,8 @@
                         <span class="color-swatch" style="background:#F5F0E8;" title="Cream"></span>
                     </div>
                     <span class="product-status">Launching Soon</span>
+                    <button class="product-vote-btn" data-product="turn-lock-flap" onclick="handleVote(this)">Vote for This</button>
+                    <div class="vote-count" data-vote-count="turn-lock-flap"></div>
                 </div>
 
             </div>
@@ -899,6 +962,17 @@
         </div>
     </div>
 
+    <!-- ===== VOTE EMAIL MODAL ===== -->
+    <div class="vote-modal-overlay" id="voteModal">
+        <div class="vote-modal">
+            <h4>Almost done!</h4>
+            <p>Drop your email to confirm your vote and get notified when we launch.</p>
+            <input type="email" id="voteEmail" placeholder="your@email.com (optional)">
+            <button onclick="submitVoteWithEmail()">Confirm Vote</button>
+            <span class="skip" onclick="submitVoteSkip()">Skip — vote without email</span>
+        </div>
+    </div>
+
     <!-- ===== SCRIPTS ===== -->
     <script>
         // ===== POPUP LOGIC =====
@@ -938,36 +1012,164 @@
             if (e.key === 'Escape') closePopup();
         });
 
+        // ===== VOTE SYSTEM =====
+        var API_BASE = ''; // Set to your backend URL when deployed
+        var pendingVoteProduct = null;
+        var pendingVoteBtn = null;
+
+        function handleVote(btn) {
+            var product = btn.getAttribute('data-product');
+            pendingVoteProduct = product;
+            pendingVoteBtn = btn;
+
+            // Check if already voted
+            var votes = JSON.parse(localStorage.getItem('softline_votes') || '[]');
+            if (votes.indexOf(product) !== -1) {
+                return; // Already voted
+            }
+
+            // Show email modal
+            document.getElementById('voteModal').classList.add('active');
+        }
+
+        function closeVoteModal() {
+            document.getElementById('voteModal').classList.remove('active');
+        }
+
+        function submitVoteWithEmail() {
+            var email = document.getElementById('voteEmail').value.trim();
+            submitVote(email);
+        }
+
+        function submitVoteSkip() {
+            submitVote('');
+        }
+
+        function submitVote(email) {
+            if (!pendingVoteProduct) return;
+
+            var btn = pendingVoteBtn;
+            var product = pendingVoteProduct;
+
+            // Get selected color and size
+            var card = btn.closest('.product-card');
+            var activeColor = card.querySelector('.color-swatch.active');
+            var activeSize = card.querySelector('.size-tag.active');
+            var color = activeColor ? activeColor.getAttribute('title') : '';
+            var size = activeSize ? activeSize.textContent : '';
+
+            // Send to backend
+            fetch(API_BASE + '/api/vote', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    product_id: product,
+                    email: email,
+                    color: color,
+                    size: size
+                })
+            }).then(function(r) { return r.json(); }).then(function(data) {
+                console.log('Vote recorded:', data);
+            }).catch(function(err) {
+                console.log('Vote save failed (saved locally):', err);
+            });
+
+            // Mark as voted locally
+            btn.classList.add('voted');
+            btn.textContent = 'Voted!';
+            var votes = JSON.parse(localStorage.getItem('softline_votes') || '[]');
+            votes.push(product);
+            localStorage.setItem('softline_votes', JSON.stringify(votes));
+
+            closeVoteModal();
+            loadVoteCounts();
+        }
+
+        function loadVoteCounts() {
+            fetch(API_BASE + '/api/votes')
+                .then(function(r) { return r.json(); })
+                .then(function(data) {
+                    var counts = data.counts || {};
+                    Object.keys(counts).forEach(function(product) {
+                        var el = document.querySelector('[data-vote-count="' + product + '"]');
+                        if (el && counts[product] > 0) {
+                            el.textContent = counts[product] + ' vote' + (counts[product] !== 1 ? 's' : '');
+                        }
+                    });
+                }).catch(function() {});
+        }
+
+        // Restore previous votes on page load
+        function restoreVotes() {
+            var votes = JSON.parse(localStorage.getItem('softline_votes') || '[]');
+            votes.forEach(function(product) {
+                var btn = document.querySelector('[data-product="' + product + '"]');
+                if (btn) {
+                    btn.classList.add('voted');
+                    btn.textContent = 'Voted!';
+                }
+            });
+        }
+
+        // Close vote modal on overlay click
+        document.getElementById('voteModal').addEventListener('click', function(e) {
+            if (e.target === this) closeVoteModal();
+        });
+
         // ===== FORM HANDLERS =====
         function handleWaitlist(e) {
             e.preventDefault();
             var form = document.getElementById('waitlistForm');
+            var formData = new FormData(form);
+            var email = formData.get('email');
+
+            // Send to backend
+            fetch(API_BASE + '/api/waitlist', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email: email, source: 'waitlist' })
+            }).then(function(r) { return r.json(); }).then(function(data) {
+                console.log('Waitlist signup:', data);
+            }).catch(function() {});
+
             var success = document.getElementById('waitlistSuccess');
             form.style.display = 'none';
             success.classList.add('show');
-            // TODO: Replace with actual email capture API (e.g., Mailchimp, ConvertKit, or custom backend)
-            console.log('Waitlist signup:', new FormData(form).get('firstName'), new FormData(form).get('email'));
         }
 
         function handlePopup(e) {
             e.preventDefault();
             var form = document.getElementById('popupForm');
+            var email = new FormData(form).get('email');
+
+            fetch(API_BASE + '/api/waitlist', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email: email, source: 'exit-popup' })
+            }).then(function(r) { return r.json(); }).then(function(data) {
+                console.log('Popup signup:', data);
+            }).catch(function() {});
+
             var success = document.getElementById('popupSuccess');
             form.style.display = 'none';
             success.classList.add('show');
             setTimeout(closePopup, 2500);
-            // TODO: Replace with actual email capture API
-            console.log('Popup signup:', new FormData(form).get('email'));
         }
 
         function handleFooterEmail(e) {
             e.preventDefault();
             var input = e.target.querySelector('input');
+            var email = input.value;
+
+            fetch(API_BASE + '/api/waitlist', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email: email, source: 'footer' })
+            }).catch(function() {});
+
             input.value = '';
             input.placeholder = 'Thank you!';
             setTimeout(function() { input.placeholder = 'Your email'; }, 2000);
-            // TODO: Replace with actual email capture API
-            console.log('Footer signup:', new FormData(e.target).get('email'));
         }
 
         // ===== WISHLIST TOGGLE =====
@@ -1017,6 +1219,9 @@
             }
             lastScroll = scroll;
         });
+        // Init
+        restoreVotes();
+        loadVoteCounts();
     </script>
 
 </body>
