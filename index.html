@@ -190,6 +190,11 @@
             grid-template-columns: repeat(3, 1fr);
             gap: 32px;
         }
+        .product-card-link {
+            display: block;
+            text-decoration: none;
+            color: inherit;
+        }
         .product-card {
             position: relative; overflow: hidden;
             transition: transform 0.3s ease;
@@ -690,11 +695,12 @@
             <div class="collection-grid">
 
                 <!-- Product 1: Lace Bow Tote -->
+                <a href="product-lace-bow-tote.html" class="product-card-link">
                 <div class="product-card">
                     <div class="product-image">
                         <img src="assets/img/products/lace-bow-tote.jpg" alt="The Lace Bow Tote in multiple colors" loading="lazy">
                         <span class="product-badge">New</span>
-                        <button class="product-wishlist" onclick="toggleWishlist(this)" aria-label="Add to wishlist">
+                        <button class="product-wishlist" onclick="event.preventDefault();event.stopPropagation();toggleWishlist(this)" aria-label="Add to wishlist">
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--charcoal)" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
                         </button>
                     </div>
@@ -713,16 +719,18 @@
                         <span class="size-tag">Mini</span>
                     </div>
                     <span class="product-status">Launching Soon</span>
-                    <button class="product-vote-btn" data-product="lace-bow-tote" onclick="handleVote(this)">Vote for This</button>
-                    <div class="vote-count" data-vote-count="lace-bow-tote"></div>
+                    <button class="product-vote-btn" data-product="lace-bow-tote" onclick="event.preventDefault();event.stopPropagation();handleVote(this)">Vote for This</button>
+                    <div class="vote-count" data-vote-count="lace-bow-tote" onclick="event.stopPropagation()"></div>
                 </div>
+                </a>
 
                 <!-- Product 2: Canvas Bear Tote -->
+                <a href="product-canvas-bear-tote.html" class="product-card-link">
                 <div class="product-card">
                     <div class="product-image">
                         <img src="assets/img/products/canvas-bear-tote.jpg" alt="The Canvas Bear Tote in multiple colors" loading="lazy">
                         <span class="product-badge">New</span>
-                        <button class="product-wishlist" onclick="toggleWishlist(this)" aria-label="Add to wishlist">
+                        <button class="product-wishlist" onclick="event.preventDefault();event.stopPropagation();toggleWishlist(this)" aria-label="Add to wishlist">
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--charcoal)" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
                         </button>
                     </div>
@@ -739,16 +747,18 @@
                         <span class="size-tag">Mini</span>
                     </div>
                     <span class="product-status">Launching Soon</span>
-                    <button class="product-vote-btn" data-product="canvas-bear-tote" onclick="handleVote(this)">Vote for This</button>
-                    <div class="vote-count" data-vote-count="canvas-bear-tote"></div>
+                    <button class="product-vote-btn" data-product="canvas-bear-tote" onclick="event.preventDefault();event.stopPropagation();handleVote(this)">Vote for This</button>
+                    <div class="vote-count" data-vote-count="canvas-bear-tote" onclick="event.stopPropagation()"></div>
                 </div>
+                </a>
 
                 <!-- Product 3: Chain Hobo -->
+                <a href="product-chain-hobo.html" class="product-card-link">
                 <div class="product-card">
                     <div class="product-image">
                         <img src="assets/img/products/chain-hobo.jpg" alt="The Chain Hobo shoulder bag" loading="lazy">
                         <span class="product-badge">New</span>
-                        <button class="product-wishlist" onclick="toggleWishlist(this)" aria-label="Add to wishlist">
+                        <button class="product-wishlist" onclick="event.preventDefault();event.stopPropagation();toggleWishlist(this)" aria-label="Add to wishlist">
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--charcoal)" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
                         </button>
                     </div>
@@ -758,16 +768,18 @@
                         <span class="color-swatch" style="background:#F5F0E8;" title="Cream"></span>
                     </div>
                     <span class="product-status">Launching Soon</span>
-                    <button class="product-vote-btn" data-product="chain-hobo" onclick="handleVote(this)">Vote for This</button>
-                    <div class="vote-count" data-vote-count="chain-hobo"></div>
+                    <button class="product-vote-btn" data-product="chain-hobo" onclick="event.preventDefault();event.stopPropagation();handleVote(this)">Vote for This</button>
+                    <div class="vote-count" data-vote-count="chain-hobo" onclick="event.stopPropagation()"></div>
                 </div>
+                </a>
 
                 <!-- Product 4: Winged Tote -->
+                <a href="product-winged-tote.html" class="product-card-link">
                 <div class="product-card">
                     <div class="product-image">
                         <img src="assets/img/products/winged-tote.jpg" alt="The Winged Tote" loading="lazy">
                         <span class="product-badge">New</span>
-                        <button class="product-wishlist" onclick="toggleWishlist(this)" aria-label="Add to wishlist">
+                        <button class="product-wishlist" onclick="event.preventDefault();event.stopPropagation();toggleWishlist(this)" aria-label="Add to wishlist">
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--charcoal)" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
                         </button>
                     </div>
@@ -777,16 +789,18 @@
                         <span class="color-swatch" style="background:#F5F0E8;" title="Cream"></span>
                     </div>
                     <span class="product-status">Launching Soon</span>
-                    <button class="product-vote-btn" data-product="winged-tote" onclick="handleVote(this)">Vote for This</button>
-                    <div class="vote-count" data-vote-count="winged-tote"></div>
+                    <button class="product-vote-btn" data-product="winged-tote" onclick="event.preventDefault();event.stopPropagation();handleVote(this)">Vote for This</button>
+                    <div class="vote-count" data-vote-count="winged-tote" onclick="event.stopPropagation()"></div>
                 </div>
+                </a>
 
                 <!-- Product 5: Turn-Lock Flap -->
+                <a href="product-turn-lock-flap.html" class="product-card-link">
                 <div class="product-card">
                     <div class="product-image">
                         <img src="assets/img/products/turn-lock-flap.jpg" alt="The Turn-Lock Flap bag" loading="lazy">
                         <span class="product-badge">New</span>
-                        <button class="product-wishlist" onclick="toggleWishlist(this)" aria-label="Add to wishlist">
+                        <button class="product-wishlist" onclick="event.preventDefault();event.stopPropagation();toggleWishlist(this)" aria-label="Add to wishlist">
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--charcoal)" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
                         </button>
                     </div>
@@ -796,9 +810,10 @@
                         <span class="color-swatch" style="background:#F5F0E8;" title="Cream"></span>
                     </div>
                     <span class="product-status">Launching Soon</span>
-                    <button class="product-vote-btn" data-product="turn-lock-flap" onclick="handleVote(this)">Vote for This</button>
-                    <div class="vote-count" data-vote-count="turn-lock-flap"></div>
+                    <button class="product-vote-btn" data-product="turn-lock-flap" onclick="event.preventDefault();event.stopPropagation();handleVote(this)">Vote for This</button>
+                    <div class="vote-count" data-vote-count="turn-lock-flap" onclick="event.stopPropagation()"></div>
                 </div>
+                </a>
 
             </div>
         </div>
