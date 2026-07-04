@@ -16,67 +16,67 @@
     <style>
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
         html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
-        body { font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif; background-color: #FAF8F4; color: #2A2A2A; font-weight: 300; line-height: 1.7; font-size: 16px; overflow-x: hidden; }
+        body { font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif; background-color: #F5F1EA; color: #1C1917; font-weight: 300; line-height: 1.7; font-size: 16px; overflow-x: hidden; }
         img { max-width: 100%; display: block; }
         a { text-decoration: none; color: inherit; }
         button { cursor: pointer; border: none; font-family: inherit; }
         input { font-family: inherit; }
         .font-serif { font-family: 'Playfair Display', Georgia, serif; }
         h1, h2, h3, h4 { font-family: 'Playfair Display', Georgia, serif; font-weight: 400; line-height: 1.2; }
-        :root { --matcha: #4A6350; --matcha-light: #5D7A64; --sand: #E8DCC8; --sand-light: #F0E8D8; --tangerine: #E8784A; --offwhite: #FAF8F4; --cream: #F5F1EB; --charcoal: #2A2A2A; --grey: #8A8A8A; --grey-light: #B8B8B8; }
-        .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(250, 248, 244, 0.92); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid rgba(74, 99, 80, 0.08); transition: all 0.3s ease; }
+        :root { --matcha: #4A6350; --matcha-dark: #3D5240; --stone: #C9C2B6; --stone-light: #E8E4DC; --accent: #4A6350; --bone: #F5F1EA; --noir: #1C1917; --grey: #9A9387; --grey-light: #C9C2B6; }
+        .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(245, 241, 234, 0.92); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid rgba(74, 99, 80, 0.08); transition: all 0.3s ease; }
         .nav-inner { max-width: 1200px; margin: 0 auto; padding: 16px 32px; display: flex; align-items: center; justify-content: space-between; }
         .nav-logo { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 500; color: var(--matcha); letter-spacing: 0.15em; text-transform: uppercase; }
         .nav-links { display: flex; gap: 32px; align-items: center; }
-        .nav-links a { font-size: 12px; font-weight: 400; letter-spacing: 0.15em; text-transform: uppercase; color: var(--charcoal); transition: color 0.2s ease; }
+        .nav-links a { font-size: 12px; font-weight: 400; letter-spacing: 0.15em; text-transform: uppercase; color: var(--noir); transition: color 0.2s ease; }
         .nav-links a:hover { color: var(--matcha); }
         .nav-cta { font-size: 11px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; background: var(--matcha); color: white; padding: 10px 24px; border-radius: 2px; transition: background 0.2s ease; }
-        .nav-cta:hover { background: var(--matcha-light); }
+        .nav-cta:hover { background: var(--matcha-dark); }
         .nav-mobile-toggle { display: none; background: none; font-size: 20px; color: var(--matcha); }
         .breadcrumb { max-width: 1200px; margin: 0 auto; padding: 100px 32px 24px; font-size: 12px; letter-spacing: 0.08em; color: var(--grey); }
         .breadcrumb a { color: var(--grey); transition: color 0.2s ease; }
         .breadcrumb a:hover { color: var(--matcha); }
         .breadcrumb .sep { margin: 0 8px; opacity: 0.4; }
-        .breadcrumb .current { color: var(--charcoal); }
+        .breadcrumb .current { color: var(--noir); }
         .product-detail { max-width: 1200px; margin: 0 auto; padding: 0 32px 80px; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
         .gallery { position: sticky; top: 100px; }
-        .gallery-main { aspect-ratio: 3/4; background: var(--cream); border-radius: 4px; overflow: hidden; margin-bottom: 12px; }
+        .gallery-main { aspect-ratio: 3/4; background: var(--bone); border-radius: 4px; overflow: hidden; margin-bottom: 12px; }
         .gallery-main img { width: 100%; height: 100%; object-fit: cover; transition: opacity 0.3s ease; }
         .gallery-thumbs { display: flex; gap: 8px; }
-        .gallery-thumb { width: 72px; height: 96px; background: var(--cream); border-radius: 3px; overflow: hidden; cursor: pointer; border: 2px solid transparent; transition: border-color 0.2s ease; flex-shrink: 0; }
+        .gallery-thumb { width: 72px; height: 96px; background: var(--bone); border-radius: 3px; overflow: hidden; cursor: pointer; border: 2px solid transparent; transition: border-color 0.2s ease; flex-shrink: 0; }
         .gallery-thumb img { width: 100%; height: 100%; object-fit: cover; }
-        .gallery-thumb:hover { border-color: var(--sand); }
+        .gallery-thumb:hover { border-color: var(--stone); }
         .gallery-thumb.active { border-color: var(--matcha); }
         .product-info { padding-top: 8px; }
         .product-tagline { font-family: 'Playfair Display', serif; font-size: 14px; font-style: italic; color: var(--matcha); margin-bottom: 16px; line-height: 1.6; }
-        .product-title { font-size: clamp(28px, 3.5vw, 38px); color: var(--charcoal); margin-bottom: 12px; }
+        .product-title { font-size: clamp(28px, 3.5vw, 38px); color: var(--noir); margin-bottom: 12px; }
         .product-price { font-size: 18px; color: var(--grey); margin-bottom: 32px; }
         .product-price .coming-soon { font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--matcha); font-weight: 400; }
         .product-price .strikethrough { text-decoration: line-through; opacity: 0.4; margin-right: 8px; }
-        .info-divider { width: 100%; height: 1px; background: var(--sand); margin: 24px 0; }
+        .info-divider { width: 100%; height: 1px; background: var(--stone); margin: 24px 0; }
         .selector-group { margin-bottom: 24px; }
-        .selector-label { font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--charcoal); font-weight: 500; margin-bottom: 10px; }
+        .selector-label { font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--noir); font-weight: 500; margin-bottom: 10px; }
         .selector-label span { color: var(--grey); font-weight: 300; text-transform: none; letter-spacing: 0; }
         .colour-swatches { display: flex; gap: 10px; flex-wrap: wrap; }
         .colour-swatch { width: 28px; height: 28px; border-radius: 50%; border: 1.5px solid rgba(0,0,0,0.1); cursor: pointer; transition: all 0.2s ease; }
         .colour-swatch:hover { transform: scale(1.12); border-color: var(--matcha); }
         .colour-swatch.active { border-color: var(--matcha); box-shadow: 0 0 0 2px white, 0 0 0 3.5px var(--matcha); }
         .size-selector { display: flex; gap: 8px; }
-        .size-option { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; padding: 8px 24px; border: 1px solid var(--sand); border-radius: 2px; color: var(--grey); transition: all 0.2s ease; cursor: pointer; background: transparent; }
+        .size-option { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; padding: 8px 24px; border: 1px solid var(--stone); border-radius: 2px; color: var(--grey); transition: all 0.2s ease; cursor: pointer; background: transparent; }
         .size-option:hover, .size-option.active { border-color: var(--matcha); color: var(--matcha); }
         .vote-btn { display: block; width: 100%; padding: 16px 0; background: var(--matcha); color: white; font-size: 12px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; border-radius: 2px; margin-top: 8px; transition: all 0.2s ease; text-align: center; }
-        .vote-btn:hover { background: var(--matcha-light); transform: translateY(-1px); }
-        .vote-btn.voted { background: var(--tangerine); pointer-events: none; }
+        .vote-btn:hover { background: var(--matcha-dark); transform: translateY(-1px); }
+        .vote-btn.voted { background: var(--accent); pointer-events: none; }
         .vote-btn.voted::after { content: " ✓"; }
         .vote-count-detail { font-size: 11px; color: var(--grey); font-weight: 300; margin-top: 8px; text-align: center; }
-        .specs-title { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--charcoal); font-weight: 500; margin-bottom: 16px; margin-top: 40px; }
+        .specs-title { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--noir); font-weight: 500; margin-bottom: 16px; margin-top: 40px; }
         .specs-table { width: 100%; border-collapse: collapse; }
-        .specs-table tr { border-bottom: 1px solid var(--sand-light); }
+        .specs-table tr { border-bottom: 1px solid var(--stone-light); }
         .specs-table td { padding: 12px 0; font-size: 13px; vertical-align: top; }
         .specs-table td:first-child { color: var(--grey); font-weight: 400; width: 40%; letter-spacing: 0.04em; }
-        .specs-table td:last-child { color: var(--charcoal); font-weight: 300; }
+        .specs-table td:last-child { color: var(--noir); font-weight: 300; }
         .product-description { margin-top: 40px; }
-        .product-description h4 { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--charcoal); font-weight: 500; margin-bottom: 16px; }
+        .product-description h4 { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--noir); font-weight: 500; margin-bottom: 16px; }
         .product-description p { font-size: 14px; color: var(--grey); line-height: 1.9; font-weight: 300; margin-bottom: 16px; }
         .also-love { background: white; padding: 80px 0; }
         .also-love-inner { max-width: 1200px; margin: 0 auto; padding: 0 32px; }
@@ -84,18 +84,18 @@
         .also-love-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
         .also-card { text-align: center; transition: transform 0.3s ease; }
         .also-card:hover { transform: translateY(-4px); }
-        .also-card-image { aspect-ratio: 3/4; background: var(--cream); border-radius: 3px; overflow: hidden; margin-bottom: 12px; }
+        .also-card-image { aspect-ratio: 3/4; background: var(--bone); border-radius: 3px; overflow: hidden; margin-bottom: 12px; }
         .also-card-image img { width: 100%; height: 100%; object-fit: cover; }
-        .also-card-name { font-family: 'Playfair Display', serif; font-size: 15px; color: var(--charcoal); margin-bottom: 4px; }
+        .also-card-name { font-family: 'Playfair Display', serif; font-size: 15px; color: var(--noir); margin-bottom: 4px; }
         .also-card-desc { font-size: 12px; color: var(--grey); font-weight: 300; }
-        .footer { background: var(--charcoal); color: white; padding: 80px 32px 40px; }
+        .footer { background: var(--noir); color: white; padding: 80px 32px 40px; }
         .footer-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 60px; }
         .footer-brand-name { font-family: 'Playfair Display', serif; font-size: 20px; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 16px; }
         .footer-brand-desc { font-size: 13px; opacity: 0.5; line-height: 1.8; font-weight: 300; max-width: 320px; margin-bottom: 24px; }
         .footer-social { display: flex; gap: 16px; }
         .footer-social a { width: 36px; height: 36px; border: 1px solid rgba(255,255,255,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: all 0.2s ease; }
-        .footer-social a:hover { border-color: var(--tangerine); }
-        .footer-social a:hover svg { stroke: var(--tangerine); }
+        .footer-social a:hover { border-color: var(--accent); }
+        .footer-social a:hover svg { stroke: var(--accent); }
         .footer-heading { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 20px; font-weight: 500; }
         .footer-links { display: flex; flex-direction: column; gap: 12px; }
         .footer-links a { font-size: 13px; opacity: 0.6; font-weight: 300; transition: opacity 0.2s ease; }
@@ -105,29 +105,29 @@
         .footer-email-form input::placeholder { color: rgba(255,255,255,0.4); }
         .footer-email-form input:focus { border-color: rgba(255,255,255,0.35); }
         .footer-email-form button { padding: 10px 20px; background: var(--matcha); color: white; font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; border-radius: 2px; transition: background 0.2s ease; }
-        .footer-email-form button:hover { background: var(--matcha-light); }
+        .footer-email-form button:hover { background: var(--matcha-dark); }
         .footer-bottom { max-width: 1200px; margin: 48px auto 0; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.08); display: flex; justify-content: space-between; align-items: center; }
         .footer-copy { font-size: 11px; opacity: 0.35; font-weight: 300; }
         .footer-location { font-size: 11px; opacity: 0.35; font-weight: 300; letter-spacing: 0.08em; }
         .vote-modal-overlay { position: fixed; inset: 0; z-index: 1000; background: rgba(0,0,0,0.4); backdrop-filter: blur(4px); display: flex; align-items: center; justify-content: center; opacity: 0; visibility: hidden; transition: all 0.3s ease; }
         .vote-modal-overlay.active { opacity: 1; visibility: visible; }
-        .vote-modal { background: var(--offwhite); max-width: 420px; width: 90%; border-radius: 6px; padding: 40px; text-align: center; box-shadow: 0 24px 64px rgba(0,0,0,0.15); }
+        .vote-modal { background: var(--bone); max-width: 420px; width: 90%; border-radius: 6px; padding: 40px; text-align: center; box-shadow: 0 24px 64px rgba(0,0,0,0.15); }
         .vote-modal h4 { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--matcha); margin-bottom: 8px; }
         .vote-modal p { font-size: 13px; color: var(--grey); margin-bottom: 20px; line-height: 1.6; }
-        .vote-modal input { width: 100%; padding: 12px 16px; border: 1px solid var(--sand); font-size: 14px; border-radius: 2px; outline: none; margin-bottom: 12px; font-weight: 300; }
+        .vote-modal input { width: 100%; padding: 12px 16px; border: 1px solid var(--stone); font-size: 14px; border-radius: 2px; outline: none; margin-bottom: 12px; font-weight: 300; }
         .vote-modal input:focus { border-color: var(--matcha); }
         .vote-modal button { width: 100%; padding: 14px; background: var(--matcha); color: white; font-size: 12px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; border-radius: 2px; transition: background 0.2s; }
-        .vote-modal button:hover { background: var(--matcha-light); }
+        .vote-modal button:hover { background: var(--matcha-dark); }
         .vote-modal .skip { display: block; margin-top: 12px; font-size: 12px; color: var(--grey); cursor: pointer; }
         .vote-modal .skip:hover { color: var(--matcha); }
         .back-link { display: inline-flex; align-items: center; gap: 8px; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--matcha); font-weight: 400; margin-bottom: 12px; transition: opacity 0.2s ease; }
         .back-link:hover { opacity: 0.7; }
         .back-link svg { transition: transform 0.2s ease; }
         .back-link:hover svg { transform: translateX(-3px); }
-        .mobile-nav { position: fixed; inset: 0; z-index: 99; background: var(--offwhite); display: flex; align-items: center; justify-content: center; opacity: 0; visibility: hidden; transition: all 0.3s ease; }
+        .mobile-nav { position: fixed; inset: 0; z-index: 99; background: var(--bone); display: flex; align-items: center; justify-content: center; opacity: 0; visibility: hidden; transition: all 0.3s ease; }
         .mobile-nav.active { opacity: 1; visibility: visible; }
         .mobile-nav-links { display: flex; flex-direction: column; align-items: center; gap: 28px; }
-        .mobile-nav-links a { font-size: 14px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--charcoal); }
+        .mobile-nav-links a { font-size: 14px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--noir); }
         .mobile-nav-close { position: absolute; top: 20px; right: 24px; background: none; font-size: 24px; color: var(--matcha); }
         @media (max-width: 1024px) { .also-love-grid { grid-template-columns: repeat(2, 1fr); } .footer-inner { grid-template-columns: 1fr 1fr; } }
         @media (max-width: 768px) { .nav-links { display: none; } .nav-mobile-toggle { display: block; } .product-detail { grid-template-columns: 1fr; gap: 32px; padding: 0 24px 60px; } .gallery { position: static; } .breadcrumb { padding: 100px 24px 16px; } .also-love-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; } .also-love { padding: 60px 0; } .also-love-inner { padding: 0 24px; } .footer-inner { grid-template-columns: 1fr; gap: 40px; } .footer-bottom { flex-direction: column; gap: 8px; text-align: center; } }
@@ -245,8 +245,8 @@
     <section class="also-love">
         <div class="also-love-inner">
             <div class="also-love-header">
-                <p style="font-size:11px;letter-spacing:0.25em;text-transform:uppercase;color:var(--tangerine);margin-bottom:12px;font-weight:500;">You May Also Love</p>
-                <h2 style="font-size:clamp(24px,3vw,32px);color:var(--charcoal);">Complete Your Collection</h2>
+                <p style="font-size:11px;letter-spacing:0.25em;text-transform:uppercase;color:var(--accent);margin-bottom:12px;font-weight:500;">You May Also Love</p>
+                <h2 style="font-size:clamp(24px,3vw,32px);color:var(--noir);">Complete Your Collection</h2>
             </div>
             <div class="also-love-grid">
                 <a href="product-lace-bow-tote.html" class="also-card">

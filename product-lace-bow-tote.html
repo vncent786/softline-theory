@@ -19,8 +19,8 @@
         html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
         body {
             font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-            background-color: #FAF8F4;
-            color: #2A2A2A;
+            background-color: #F5F1EA;
+            color: #1C1917;
             font-weight: 300;
             line-height: 1.7;
             font-size: 16px;
@@ -41,21 +41,20 @@
         /* ========== COLOURS ========== */
         :root {
             --matcha: #4A6350;
-            --matcha-light: #5D7A64;
-            --sand: #E8DCC8;
-            --sand-light: #F0E8D8;
-            --tangerine: #E8784A;
-            --offwhite: #FAF8F4;
-            --cream: #F5F1EB;
-            --charcoal: #2A2A2A;
-            --grey: #8A8A8A;
-            --grey-light: #B8B8B8;
+            --matcha-dark: #3D5240;
+            --stone: #C9C2B6;
+            --stone-light: #E8E4DC;
+            --accent: #4A6350;
+            --bone: #F5F1EA;
+            --noir: #1C1917;
+            --grey: #9A9387;
+            --grey-light: #C9C2B6;
         }
 
         /* ========== NAVIGATION ========== */
         .nav {
             position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-            background: rgba(250, 248, 244, 0.92);
+            background: rgba(245, 241, 234, 0.92);
             backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
             border-bottom: 1px solid rgba(74, 99, 80, 0.08);
             transition: all 0.3s ease;
@@ -73,7 +72,7 @@
         .nav-links { display: flex; gap: 32px; align-items: center; }
         .nav-links a {
             font-size: 12px; font-weight: 400; letter-spacing: 0.15em;
-            text-transform: uppercase; color: var(--charcoal);
+            text-transform: uppercase; color: var(--noir);
             transition: color 0.2s ease;
         }
         .nav-links a:hover { color: var(--matcha); }
@@ -83,7 +82,7 @@
             padding: 10px 24px; border-radius: 2px;
             transition: background 0.2s ease;
         }
-        .nav-cta:hover { background: var(--matcha-light); }
+        .nav-cta:hover { background: var(--matcha-dark); }
         .nav-mobile-toggle { display: none; background: none; font-size: 20px; color: var(--matcha); }
 
         /* ========== BREADCRUMB ========== */
@@ -97,7 +96,7 @@
         }
         .breadcrumb a:hover { color: var(--matcha); }
         .breadcrumb .sep { margin: 0 8px; opacity: 0.4; }
-        .breadcrumb .current { color: var(--charcoal); }
+        .breadcrumb .current { color: var(--noir); }
 
         /* ========== PRODUCT DETAIL LAYOUT ========== */
         .product-detail {
@@ -112,7 +111,7 @@
         /* Image Gallery */
         .gallery { position: sticky; top: 100px; }
         .gallery-main {
-            aspect-ratio: 3/4; background: var(--cream);
+            aspect-ratio: 3/4; background: var(--bone);
             border-radius: 4px; overflow: hidden;
             margin-bottom: 12px;
         }
@@ -121,14 +120,14 @@
             display: flex; gap: 8px;
         }
         .gallery-thumb {
-            width: 72px; height: 96px; background: var(--cream);
+            width: 72px; height: 96px; background: var(--bone);
             border-radius: 3px; overflow: hidden; cursor: pointer;
             border: 2px solid transparent;
             transition: border-color 0.2s ease;
             flex-shrink: 0;
         }
         .gallery-thumb img { width: 100%; height: 100%; object-fit: cover; }
-        .gallery-thumb:hover { border-color: var(--sand); }
+        .gallery-thumb:hover { border-color: var(--stone); }
         .gallery-thumb.active { border-color: var(--matcha); }
 
         /* Product Info */
@@ -139,7 +138,7 @@
             margin-bottom: 16px; line-height: 1.6;
         }
         .product-title {
-            font-size: clamp(28px, 3.5vw, 38px); color: var(--charcoal);
+            font-size: clamp(28px, 3.5vw, 38px); color: var(--noir);
             margin-bottom: 12px;
         }
         .product-price {
@@ -155,7 +154,7 @@
 
         /* Divider */
         .info-divider {
-            width: 100%; height: 1px; background: var(--sand);
+            width: 100%; height: 1px; background: var(--stone);
             margin: 24px 0;
         }
 
@@ -163,7 +162,7 @@
         .selector-group { margin-bottom: 24px; }
         .selector-label {
             font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase;
-            color: var(--charcoal); font-weight: 500; margin-bottom: 10px;
+            color: var(--noir); font-weight: 500; margin-bottom: 10px;
         }
         .selector-label span { color: var(--grey); font-weight: 300; text-transform: none; letter-spacing: 0; }
         .colour-swatches {
@@ -190,7 +189,7 @@
         }
         .size-option {
             font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase;
-            padding: 8px 24px; border: 1px solid var(--sand); border-radius: 2px;
+            padding: 8px 24px; border: 1px solid var(--stone); border-radius: 2px;
             color: var(--grey); transition: all 0.2s ease; cursor: pointer;
             background: transparent;
         }
@@ -207,9 +206,9 @@
             margin-top: 8px; transition: all 0.2s ease;
             text-align: center;
         }
-        .vote-btn:hover { background: var(--matcha-light); transform: translateY(-1px); }
+        .vote-btn:hover { background: var(--matcha-dark); transform: translateY(-1px); }
         .vote-btn.voted {
-            background: var(--tangerine); pointer-events: none;
+            background: var(--accent); pointer-events: none;
         }
         .vote-btn.voted::after { content: " ✓"; }
         .vote-count-detail {
@@ -220,7 +219,7 @@
         /* Specs Table */
         .specs-title {
             font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase;
-            color: var(--charcoal); font-weight: 500; margin-bottom: 16px;
+            color: var(--noir); font-weight: 500; margin-bottom: 16px;
             margin-top: 40px;
         }
         .specs-table {
@@ -228,7 +227,7 @@
             border-collapse: collapse;
         }
         .specs-table tr {
-            border-bottom: 1px solid var(--sand-light);
+            border-bottom: 1px solid var(--stone-light);
         }
         .specs-table td {
             padding: 12px 0;
@@ -242,7 +241,7 @@
             letter-spacing: 0.04em;
         }
         .specs-table td:last-child {
-            color: var(--charcoal);
+            color: var(--noir);
             font-weight: 300;
         }
 
@@ -252,7 +251,7 @@
         }
         .product-description h4 {
             font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase;
-            color: var(--charcoal); font-weight: 500; margin-bottom: 16px;
+            color: var(--noir); font-weight: 500; margin-bottom: 16px;
         }
         .product-description p {
             font-size: 14px; color: var(--grey); line-height: 1.9;
@@ -283,14 +282,14 @@
         }
         .also-card:hover { transform: translateY(-4px); }
         .also-card-image {
-            aspect-ratio: 3/4; background: var(--cream);
+            aspect-ratio: 3/4; background: var(--bone);
             border-radius: 3px; overflow: hidden;
             margin-bottom: 12px;
         }
         .also-card-image img { width: 100%; height: 100%; object-fit: cover; }
         .also-card-name {
             font-family: 'Playfair Display', serif; font-size: 15px;
-            color: var(--charcoal); margin-bottom: 4px;
+            color: var(--noir); margin-bottom: 4px;
         }
         .also-card-desc {
             font-size: 12px; color: var(--grey); font-weight: 300;
@@ -298,7 +297,7 @@
 
         /* ========== FOOTER ========== */
         .footer {
-            background: var(--charcoal); color: white;
+            background: var(--noir); color: white;
             padding: 80px 32px 40px;
         }
         .footer-inner {
@@ -320,8 +319,8 @@
             border-radius: 50%; display: flex; align-items: center; justify-content: center;
             transition: all 0.2s ease;
         }
-        .footer-social a:hover { border-color: var(--tangerine); }
-        .footer-social a:hover svg { stroke: var(--tangerine); }
+        .footer-social a:hover { border-color: var(--accent); }
+        .footer-social a:hover svg { stroke: var(--accent); }
         .footer-heading {
             font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase;
             margin-bottom: 20px; font-weight: 500;
@@ -346,7 +345,7 @@
             text-transform: uppercase; border-radius: 2px;
             transition: background 0.2s ease;
         }
-        .footer-email-form button:hover { background: var(--matcha-light); }
+        .footer-email-form button:hover { background: var(--matcha-dark); }
         .footer-bottom {
             max-width: 1200px; margin: 48px auto 0; padding-top: 24px;
             border-top: 1px solid rgba(255,255,255,0.08);
@@ -367,7 +366,7 @@
         }
         .vote-modal-overlay.active { opacity: 1; visibility: visible; }
         .vote-modal {
-            background: var(--offwhite); max-width: 420px; width: 90%;
+            background: var(--bone); max-width: 420px; width: 90%;
             border-radius: 6px; padding: 40px; text-align: center;
             box-shadow: 0 24px 64px rgba(0,0,0,0.15);
         }
@@ -379,7 +378,7 @@
             font-size: 13px; color: var(--grey); margin-bottom: 20px; line-height: 1.6;
         }
         .vote-modal input {
-            width: 100%; padding: 12px 16px; border: 1px solid var(--sand);
+            width: 100%; padding: 12px 16px; border: 1px solid var(--stone);
             font-size: 14px; border-radius: 2px; outline: none; margin-bottom: 12px;
             font-weight: 300;
         }
@@ -389,7 +388,7 @@
             font-size: 12px; font-weight: 500; letter-spacing: 0.15em;
             text-transform: uppercase; border-radius: 2px; transition: background 0.2s;
         }
-        .vote-modal button:hover { background: var(--matcha-light); }
+        .vote-modal button:hover { background: var(--matcha-dark); }
         .vote-modal .skip {
             display: block; margin-top: 12px; font-size: 12px;
             color: var(--grey); cursor: pointer;
@@ -437,7 +436,7 @@
         /* ========== MOBILE NAV MENU ========== */
         .mobile-nav {
             position: fixed; inset: 0; z-index: 99;
-            background: var(--offwhite); display: flex; align-items: center;
+            background: var(--bone); display: flex; align-items: center;
             justify-content: center; opacity: 0; visibility: hidden;
             transition: all 0.3s ease;
         }
@@ -447,7 +446,7 @@
         }
         .mobile-nav-links a {
             font-size: 14px; letter-spacing: 0.2em; text-transform: uppercase;
-            color: var(--charcoal);
+            color: var(--noir);
         }
         .mobile-nav-close {
             position: absolute; top: 20px; right: 24px;
@@ -582,8 +581,8 @@
     <section class="also-love">
         <div class="also-love-inner">
             <div class="also-love-header">
-                <p style="font-size:11px;letter-spacing:0.25em;text-transform:uppercase;color:var(--tangerine);margin-bottom:12px;font-weight:500;">You May Also Love</p>
-                <h2 style="font-size:clamp(24px,3vw,32px);color:var(--charcoal);">Complete Your Collection</h2>
+                <p style="font-size:11px;letter-spacing:0.25em;text-transform:uppercase;color:var(--accent);margin-bottom:12px;font-weight:500;">You May Also Love</p>
+                <h2 style="font-size:clamp(24px,3vw,32px);color:var(--noir);">Complete Your Collection</h2>
             </div>
             <div class="also-love-grid">
                 <a href="product-canvas-bear-tote.html" class="also-card">
