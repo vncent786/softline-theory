@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Canvas Bear Tote — Softline Theory</title>
-    <meta name="description" content="The Canvas Bear Tote by Softline Theory. Woven canvas with faux leather trim and plush bear charm. Available in 4 colour trims.">
-    <meta property="og:title" content="The Canvas Bear Tote — Softline Theory">
-    <meta property="og:description" content="Woven canvas with faux leather trim and plush bear charm. Two-tone design in 4 colour trims.">
+    <title>The Maren — Softline Theory</title>
+    <meta name="description" content="The Maren by Softline Theory. Compact structured pebbled leather handbag with dual rolled handles and detachable shoulder strap. Available in 7 colours.">
+    <meta property="og:title" content="The Maren — Softline Theory">
+    <meta property="og:description" content="Compact structured pebbled leather handbag with dual rolled handles and detachable shoulder strap. Gold-tone hardware.">
     <meta property="og:type" content="product">
-    <meta property="og:url" content="https://softlinetheory.com/product-canvas-bear-tote.html">
+    <meta property="og:url" content="https://softlinetheory.com/product-the-maren.html">
     <meta name="twitter:card" content="summary_large_image">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -43,7 +43,7 @@
         .gallery { position: sticky; top: 100px; }
         .gallery-main { aspect-ratio: 3/4; background: var(--bone); border-radius: 4px; overflow: hidden; margin-bottom: 12px; }
         .gallery-main img { width: 100%; height: 100%; object-fit: cover; transition: opacity 0.3s ease; }
-        .gallery-thumbs { display: flex; gap: 8px; }
+        .gallery-thumbs { display: flex; gap: 8px; flex-wrap: wrap; }
         .gallery-thumb { width: 72px; height: 96px; background: var(--bone); border-radius: 3px; overflow: hidden; cursor: pointer; border: 2px solid transparent; transition: border-color 0.2s ease; flex-shrink: 0; }
         .gallery-thumb img { width: 100%; height: 100%; object-fit: cover; }
         .gallery-thumb:hover { border-color: var(--stone); }
@@ -53,7 +53,6 @@
         .product-title { font-size: clamp(28px, 3.5vw, 38px); color: var(--noir); margin-bottom: 12px; }
         .product-price { font-size: 18px; color: var(--grey); margin-bottom: 32px; }
         .product-price .coming-soon { font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--noir); font-weight: 400; }
-        .product-price .strikethrough { text-decoration: line-through; opacity: 0.4; margin-right: 8px; }
         .info-divider { width: 100%; height: 1px; background: var(--stone); margin: 24px 0; }
         .selector-group { margin-bottom: 24px; }
         .selector-label { font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--noir); font-weight: 500; margin-bottom: 10px; }
@@ -62,9 +61,6 @@
         .colour-swatch { width: 28px; height: 28px; border-radius: 50%; border: 1.5px solid rgba(0,0,0,0.1); cursor: pointer; transition: all 0.2s ease; }
         .colour-swatch:hover { transform: scale(1.12); border-color: var(--noir); }
         .colour-swatch.active { border-color: var(--noir); box-shadow: 0 0 0 2px white, 0 0 0 3.5px var(--noir); }
-        .size-selector { display: flex; gap: 8px; }
-        .size-option { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; padding: 8px 24px; border: 1px solid var(--stone); border-radius: 2px; color: var(--grey); transition: all 0.2s ease; cursor: pointer; background: transparent; }
-        .size-option:hover, .size-option.active { border-color: var(--noir); color: var(--noir); }
         .vote-btn { display: block; width: 100%; padding: 16px 0; background: var(--noir); color: white; font-size: 12px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; border-radius: 2px; margin-top: 8px; transition: all 0.2s ease; text-align: center; }
         .vote-btn:hover { background: var(--noir-dark); transform: translateY(-1px); }
         .vote-btn.voted { background: var(--noir); pointer-events: none; }
@@ -82,7 +78,7 @@
         .also-love { background: white; padding: 80px 0; }
         .also-love-inner { max-width: 1200px; margin: 0 auto; padding: 0 32px; }
         .also-love-header { text-align: center; margin-bottom: 48px; }
-        .also-love-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+        .also-love-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; max-width: 640px; margin: 0 auto; }
         .also-card { text-align: center; transition: transform 0.3s ease; }
         .also-card:hover { transform: translateY(-4px); }
         .also-card-image { aspect-ratio: 3/4; background: var(--bone); border-radius: 3px; overflow: hidden; margin-bottom: 12px; }
@@ -132,7 +128,7 @@
         .mobile-nav-close { position: absolute; top: 20px; right: 24px; background: none; font-size: 24px; color: var(--noir); }
         @media (max-width: 1024px) { .also-love-grid { grid-template-columns: repeat(2, 1fr); } .footer-inner { grid-template-columns: 1fr 1fr; } }
         @media (max-width: 768px) { .nav-links { display: none; } .nav-mobile-toggle { display: block; } .product-detail { grid-template-columns: 1fr; gap: 32px; padding: 0 24px 60px; } .gallery { position: static; } .breadcrumb { padding: 100px 24px 16px; } .also-love-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; } .also-love { padding: 60px 0; } .also-love-inner { padding: 0 24px; } .footer-inner { grid-template-columns: 1fr; gap: 40px; } .footer-bottom { flex-direction: column; gap: 8px; text-align: center; } }
-        @media (max-width: 480px) { .also-love-grid { grid-template-columns: 1fr 1fr; gap: 12px; } .gallery-thumb { width: 56px; height: 74px; } }
+        @media (max-width: 480px) { .gallery-thumb { width: 56px; height: 74px; } }
     </style>
 </head>
 <body>
@@ -167,24 +163,16 @@
         <span class="sep">/</span>
         <a href="index.html#collection">Collection</a>
         <span class="sep">/</span>
-        <span class="current">The Canvas Bear Tote</span>
+        <span class="current">The Maren</span>
     </div>
 
     <section class="product-detail">
         <div class="gallery">
             <div class="gallery-main">
-                <img src="assets/img/products/canvas-bear-tote.jpg" alt="The Canvas Bear Tote" id="mainImage">
+                <img src="assets/img/products/the-maren-crimson-red.png" alt="The Maren in Crimson Red" id="mainImage">
             </div>
-            <div class="gallery-thumbs">
-                <div class="gallery-thumb active" onclick="swapImage(this, 'assets/img/products/canvas-bear-tote.jpg', 'The Canvas Bear Tote')">
-                    <img src="assets/img/products/canvas-bear-tote.jpg" alt="Canvas Bear Tote front">
-                </div>
-                <div class="gallery-thumb" onclick="swapImage(this, 'assets/img/products/canvas-bear-tote-closeup.jpg', 'The Canvas Bear Tote closeup')">
-                    <img src="assets/img/products/canvas-bear-tote-closeup.jpg" alt="Canvas Bear Tote closeup">
-                </div>
-                <div class="gallery-thumb" onclick="swapImage(this, 'assets/img/products/hero-bag.jpg', 'The Canvas Bear Tote styled')">
-                    <img src="assets/img/products/hero-bag.jpg" alt="Canvas Bear Tote styled">
-                </div>
+            <div class="gallery-thumbs" id="galleryThumbs">
+                <!-- Thumbnails generated by script -->
             </div>
         </div>
 
@@ -194,51 +182,38 @@
                 Back to Collection
             </a>
 
-            <p class="product-tagline">A little playful. A lot practical.</p>
-            <h1 class="product-title">The Canvas Bear Tote</h1>
+            <p class="product-tagline">Quietly tailored. Quietly timeless.</p>
+            <h1 class="product-title">The Maren</h1>
             <p class="product-price">
-                <span class="strikethrough">$XX.XX</span>
                 <span class="coming-soon">Coming Soon</span>
             </p>
 
             <div class="info-divider"></div>
 
             <div class="selector-group">
-                <p class="selector-label">Colour — <span id="colourName">Yellow Trim</span></p>
-                <div class="colour-swatches">
-                    <span class="colour-swatch active" style="background:#F5E6A3;" title="Yellow Trim" onclick="selectColour(this, 'Yellow Trim')"></span>
-                    <span class="colour-swatch" style="background:#8B6F4E;" title="Brown Trim" onclick="selectColour(this, 'Brown Trim')"></span>
-                    <span class="colour-swatch" style="background:#F0C0D0;" title="Pink Trim" onclick="selectColour(this, 'Pink Trim')"></span>
-                    <span class="colour-swatch" style="background:#1A1A1A;" title="Black Trim" onclick="selectColour(this, 'Black Trim')"></span>
+                <p class="selector-label">Colour — <span id="colourName">Crimson Red</span></p>
+                <div class="colour-swatches" id="colourSwatches">
+                    <!-- Swatches generated by script -->
                 </div>
             </div>
 
-            <div class="selector-group">
-                <p class="selector-label">Size — <span id="sizeName">Large</span></p>
-                <div class="size-selector">
-                    <span class="size-option active" onclick="selectSize(this, 'Large')">Large</span>
-                    <span class="size-option" onclick="selectSize(this, 'Mini')">Mini</span>
-                </div>
-            </div>
-
-            <button class="vote-btn" data-product="canvas-bear-tote" onclick="handleVote(this)">Vote for This Style</button>
-            <div class="vote-count-detail" data-vote-count="canvas-bear-tote"></div>
+            <button class="vote-btn" data-product="the-maren" onclick="handleVote(this)">Vote for This Style</button>
+            <div class="vote-count-detail" data-vote-count="the-maren"></div>
 
             <p class="specs-title">Specifications</p>
             <table class="specs-table">
-                <tr><td>Material</td><td>Cotton Canvas + PU Leather Trim</td></tr>
-                <tr><td>Dimensions (W×H×D)</td><td id="specDimensions">30cm × 25cm × 14cm</td></tr>
-                <tr><td>Strap Drop</td><td id="specStrap">22cm</td></tr>
-                <tr><td>Closure</td><td>Zip top</td></tr>
-                <tr><td>Compartments</td><td id="specCompartments">1 main, 1 inner zip pocket, 1 slip pocket</td></tr>
-                <tr><td>Weight</td><td id="specWeight">~420g</td></tr>
+                <tr><td>Material</td><td>Pebbled leather</td></tr>
+                <tr><td>Silhouette</td><td>Compact structured handbag</td></tr>
+                <tr><td>Handles</td><td>Dual rolled handles</td></tr>
+                <tr><td>Strap</td><td>Detachable shoulder strap</td></tr>
+                <tr><td>Hardware</td><td>Gold-tone</td></tr>
             </table>
 
             <div class="product-description">
                 <h4>About This Bag</h4>
-                <p>The Canvas Bear Tote is for the woman who doesn't take herself too seriously — but still wants a bag that works hard. Natural cotton canvas meets polished faux leather trim for a two-tone contrast that feels both relaxed and considered. The best part? A plush bear charm that dangles playfully from the handle, adding a touch of warmth that sets it apart from every other tote in your rotation.</p>
-                <p>Don't let the playful exterior fool you — this tote means business on the inside. The zip-top closure keeps everything secure, while the inner zip pocket and slip pocket give your keys, phone, and cards their own dedicated spots. The Large fits a 13" laptop comfortably; the Mini is your weekend companion for farmer's market runs and brunch dates.</p>
-                <p>Four trim colourways let you pick your personality — cheerful Yellow for sunnier days, grounded Brown for a classic feel, soft Pink for a romantic touch, or versatile Black for everyday edge. Every charm is matched to the trim, so the detail feels intentional, not random.</p>
+                <p>The Maren is our ode to the quietly timeless handbag. Compact and structured, it carries itself with a tailored confidence that works from the office to an evening out. Dual rolled handles give it a classic hand-carry silhouette, while a detachable shoulder strap adds hands-free versatility when the day calls for it.</p>
+                <p>The pebbled leather has a soft, lived-in texture from the first wear — the kind that only looks better with age. Gold-tone hardware warms the look without ever feeling flashy, and the structured base keeps its clean lines season after season.</p>
+                <p>Seven considered colours let you set the tone: rich Crimson Red and Camel Brown for warmth, cool Dark Denim, Powder, and Washed Slate Blues for calm, Emerald Green for depth, and luminous Ivory White for a fresh, clean finish.</p>
             </div>
         </div>
     </section>
@@ -250,25 +225,15 @@
                 <h2 style="font-size:clamp(24px,3vw,32px);color:var(--noir);">Complete Your Collection</h2>
             </div>
             <div class="also-love-grid">
-                <a href="product-lace-bow-tote.html" class="also-card">
-                    <div class="also-card-image"><img src="assets/img/products/lace-bow-tote.jpg" alt="The Lace Bow Tote" loading="lazy"></div>
-                    <p class="also-card-name">The Lace Bow Tote</p>
-                    <p class="also-card-desc">Pebbled faux leather with lace bow</p>
+                <a href="product-woven-mini-tote.html" class="also-card">
+                    <div class="also-card-image"><img src="assets/img/products/woven-mini-tote-black.png" alt="The Woven Mini Tote" loading="lazy"></div>
+                    <p class="also-card-name">The Woven Mini Tote</p>
+                    <p class="also-card-desc">Structured woven tote in 6 colours</p>
                 </a>
-                <a href="product-chain-hobo.html" class="also-card">
-                    <div class="also-card-image"><img src="assets/img/products/chain-hobo.jpg" alt="The Chain Hobo" loading="lazy"></div>
-                    <p class="also-card-name">The Chain Hobo</p>
-                    <p class="also-card-desc">Half-chain strap with gold bar buckle</p>
-                </a>
-                <a href="product-winged-tote.html" class="also-card">
-                    <div class="also-card-image"><img src="assets/img/products/winged-tote.jpg" alt="The Winged Tote" loading="lazy"></div>
-                    <p class="also-card-name">The Winged Tote</p>
-                    <p class="also-card-desc">Signature flared winged edges</p>
-                </a>
-                <a href="product-turn-lock-flap.html" class="also-card">
-                    <div class="also-card-image"><img src="assets/img/products/turn-lock-flap.jpg" alt="The Turn-Lock Flap" loading="lazy"></div>
-                    <p class="also-card-name">The Turn-Lock Flap</p>
-                    <p class="also-card-desc">Gold turn-lock with detachable strap</p>
+                <a href="product-woven-mini-tote-casual.html" class="also-card">
+                    <div class="also-card-image"><img src="assets/img/products/woven-casual-black.png" alt="The Woven Mini Tote Casual" loading="lazy"></div>
+                    <p class="also-card-name">The Woven Mini Tote Casual</p>
+                    <p class="also-card-desc">Relaxed baguette silhouette in 8 colours</p>
                 </a>
             </div>
         </div>
@@ -322,36 +287,54 @@
         var API_BASE = '';
         var pendingVoteProduct = null;
         var pendingVoteBtn = null;
-        var selectedColour = 'Yellow Trim';
-        var selectedSize = 'Large';
-        var specs = {
-            'Large': { dimensions: '30cm × 25cm × 14cm', strap: '22cm', weight: '~420g', compartments: '1 main, 1 inner zip pocket, 1 slip pocket' },
-            'Mini': { dimensions: '22cm × 18cm × 10cm', strap: '18cm', weight: '~280g', compartments: '1 main, 1 inner zip pocket' }
-        };
+        var selectedColour = 'Crimson Red';
 
-        function swapImage(thumb, src, alt) {
-            document.getElementById('mainImage').src = src;
-            document.getElementById('mainImage').alt = alt;
-            document.querySelectorAll('.gallery-thumb').forEach(function(t) { t.classList.remove('active'); });
-            thumb.classList.add('active');
+        var VARIANTS = [
+            { name: 'Crimson Red',      hex: '#B3162B', img: 'assets/img/products/the-maren-crimson-red.png' },
+            { name: 'Camel Brown',      hex: '#9A642F', img: 'assets/img/products/the-maren-camel-brown.png' },
+            { name: 'Dark Denim Blue',  hex: '#425C6B', img: 'assets/img/products/the-maren-dark-denim.png' },
+            { name: 'Emerald Green',    hex: '#00865C', img: 'assets/img/products/the-maren-emerald-green.png' },
+            { name: 'Ivory White',      hex: '#E7DFCF', img: 'assets/img/products/the-maren-ivory-white.png' },
+            { name: 'Powder Blue',      hex: '#AFC7D2', img: 'assets/img/products/the-maren-powder-blue.png' },
+            { name: 'Washed Slate Blue',hex: '#5F7E8D', img: 'assets/img/products/the-maren-washed-slate.png' }
+        ];
+
+        function buildGallery() {
+            var thumbs = document.getElementById('galleryThumbs');
+            var swatches = document.getElementById('colourSwatches');
+            var html = '';
+            VARIANTS.forEach(function(v, i) {
+                html += '<div class="gallery-thumb' + (i === 0 ? ' active' : '') + '" data-index="' + i + '" onclick="setVariant(' + i + ')" title="' + v.name + '">';
+                html += '<img src="' + v.img + '" alt="The Maren in ' + v.name + '"></div>';
+            });
+            thumbs.innerHTML = html;
+
+            var sHtml = '';
+            VARIANTS.forEach(function(v, i) {
+                sHtml += '<span class="colour-swatch' + (i === 0 ? ' active' : '') + '" data-index="' + i + '" style="background:' + v.hex + ';" title="' + v.name + '" onclick="setVariant(' + i + ')"></span>';
+            });
+            swatches.innerHTML = sHtml;
         }
-        function selectColour(swatch, name) {
+
+        function setVariant(index) {
+            var v = VARIANTS[index];
+            var main = document.getElementById('mainImage');
+            main.style.opacity = '0';
+            setTimeout(function() {
+                main.src = v.img;
+                main.alt = 'The Maren in ' + v.name;
+                main.style.opacity = '1';
+            }, 150);
+            selectedColour = v.name;
+            document.getElementById('colourName').textContent = v.name;
             document.querySelectorAll('.colour-swatch').forEach(function(s) { s.classList.remove('active'); });
-            swatch.classList.add('active');
-            selectedColour = name;
-            document.getElementById('colourName').textContent = name;
+            var sw = document.querySelector('.colour-swatch[data-index="' + index + '"]');
+            if (sw) sw.classList.add('active');
+            document.querySelectorAll('.gallery-thumb').forEach(function(t) { t.classList.remove('active'); });
+            var th = document.querySelector('.gallery-thumb[data-index="' + index + '"]');
+            if (th) th.classList.add('active');
         }
-        function selectSize(el, size) {
-            document.querySelectorAll('.size-option').forEach(function(s) { s.classList.remove('active'); });
-            el.classList.add('active');
-            selectedSize = size;
-            document.getElementById('sizeName').textContent = size;
-            var s = specs[size];
-            document.getElementById('specDimensions').textContent = s.dimensions;
-            document.getElementById('specStrap').textContent = s.strap;
-            document.getElementById('specWeight').textContent = s.weight;
-            document.getElementById('specCompartments').textContent = s.compartments;
-        }
+
         function handleVote(btn) {
             var product = btn.getAttribute('data-product');
             pendingVoteProduct = product; pendingVoteBtn = btn;
@@ -364,7 +347,7 @@
         function submitVoteSkip() { submitVote(''); }
         function submitVote(email) {
             if (!pendingVoteProduct) return;
-            fetch(API_BASE + '/api/vote', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ product_id: pendingVoteProduct, email: email, color: selectedColour, size: selectedSize }) }).catch(function() {});
+            fetch(API_BASE + '/api/vote', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ product_id: pendingVoteProduct, email: email, color: selectedColour }) }).catch(function() {});
             pendingVoteBtn.classList.add('voted'); pendingVoteBtn.textContent = 'Voted!';
             var votes = JSON.parse(localStorage.getItem('softline_votes') || '[]');
             votes.push(pendingVoteProduct); localStorage.setItem('softline_votes', JSON.stringify(votes));
@@ -387,6 +370,7 @@
         function handleFooterEmail(e) { e.preventDefault(); var input = e.target.querySelector('input'); fetch(API_BASE + '/api/waitlist', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ email: input.value, source: 'footer-product' }) }).catch(function() {}); input.value = ''; input.placeholder = 'Thank you!'; setTimeout(function() { input.placeholder = 'Your email'; }, 2000); }
         function toggleMobileNav() { document.getElementById('mobileNav').classList.toggle('active'); document.body.style.overflow = document.getElementById('mobileNav').classList.contains('active') ? 'hidden' : ''; }
         window.addEventListener('scroll', function() { var nav = document.getElementById('nav'); nav.style.boxShadow = window.pageYOffset > 100 ? '0 1px 8px rgba(0,0,0,0.04)' : 'none'; });
+        buildGallery();
         restoreVotes(); loadVoteCounts();
     </script>
 </body>
