@@ -579,6 +579,64 @@
         }
         .popup-success p { font-size: 13px; color: var(--grey); }
 
+        /* ========== DARK CAMPAIGN STRIP ========== */
+        .campaign-dark {
+            background: #1C1917;
+            padding: 120px 32px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .campaign-dark::before {
+            content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(74,99,80,0.4), transparent);
+        }
+        .campaign-inner {
+            max-width: 700px; margin: 0 auto;
+            position: relative; z-index: 1;
+        }
+        .campaign-label {
+            font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase;
+            color: rgba(74, 99, 80, 0.9); margin-bottom: 28px; font-weight: 500;
+        }
+        .campaign-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(32px, 5vw, 52px); line-height: 1.2;
+            color: #F5F1EA; font-weight: 400; margin-bottom: 40px;
+            letter-spacing: -0.01em;
+        }
+        .campaign-swatches {
+            display: flex; justify-content: center; gap: 14px; margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+        .campaign-dot {
+            width: 28px; height: 28px; border-radius: 50%;
+            border: 2px solid rgba(245, 241, 234, 0.15);
+            transition: all 0.3s ease; cursor: default;
+        }
+        .campaign-dot:hover {
+            transform: scale(1.2);
+            border-color: rgba(245, 241, 234, 0.4);
+        }
+        .campaign-text {
+            font-size: 15px; line-height: 1.8; font-weight: 300;
+            color: rgba(245, 241, 234, 0.6); max-width: 480px; margin: 0 auto 36px;
+        }
+        .campaign-link {
+            font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase;
+            color: #F5F1EA; font-weight: 500;
+            border-bottom: 1px solid rgba(245, 241, 234, 0.3);
+            padding-bottom: 4px; transition: all 0.2s ease;
+        }
+        .campaign-link:hover {
+            border-bottom-color: #F5F1EA; opacity: 0.8;
+        }
+        @media (max-width: 768px) {
+            .campaign-dark { padding: 80px 24px; }
+            .campaign-dot { width: 22px; height: 22px; }
+            .campaign-swatches { gap: 10px; }
+        }
+
         /* ========== RESPONSIVE ========== */
         @media (max-width: 1024px) {
             .hero-inner { grid-template-columns: 1fr; gap: 40px; text-align: center; }
@@ -831,6 +889,26 @@
                 <div class="story-divider"></div>
                 <p class="story-text">We believe the best accessories don't demand attention — they earn it. Each bag is designed in Singapore with a focus on considered materials, feminine details, and silhouettes that transition from morning coffee to evening plans without a second thought.</p>
             </div>
+        </div>
+    </section>
+
+    <!-- ===== DARK CAMPAIGN STRIP ===== -->
+    <section class="campaign-dark" id="campaign">
+        <div class="campaign-inner">
+            <p class="campaign-label">The Collection</p>
+            <h2 class="campaign-title">Eight Colors.<br>One Quiet Statement.</h2>
+            <div class="campaign-swatches">
+                <span class="campaign-dot" style="background:#1A1714;" title="Black"></span>
+                <span class="campaign-dot" style="background:#B3162B;" title="Crimson"></span>
+                <span class="campaign-dot" style="background:#00865C;" title="Emerald"></span>
+                <span class="campaign-dot" style="background:#D4B474;" title="Honey Tan"></span>
+                <span class="campaign-dot" style="background:#D89005;" title="Mustard"></span>
+                <span class="campaign-dot" style="background:#E7DFCF;" title="Ivory"></span>
+                <span class="campaign-dot" style="background:#A8C3C9;" title="Dusty Blue"></span>
+                <span class="campaign-dot" style="background:#84903F;" title="Olive"></span>
+            </div>
+            <p class="campaign-text">Woven leather. Structured silhouettes. Designed in Singapore for the woman who doesn't need to shout to be heard.</p>
+            <a href="#collection" class="campaign-link">Explore the Collection →</a>
         </div>
     </section>
 
