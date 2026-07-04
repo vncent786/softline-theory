@@ -47,6 +47,7 @@
             --accent: #4A6350;
             --bone: #F5F1EA;
             --noir: #1C1917;
+            --noir-dark: #100E0C;
             --grey: #9A9387;
             --grey-light: #C9C2B6;
         }
@@ -66,7 +67,7 @@
         }
         .nav-logo {
             font-family: 'Playfair Display', serif;
-            font-size: 18px; font-weight: 500; color: var(--matcha);
+            font-size: 18px; font-weight: 500; color: var(--noir);
             letter-spacing: 0.15em; text-transform: uppercase;
         }
         .nav-links { display: flex; gap: 32px; align-items: center; }
@@ -75,15 +76,15 @@
             text-transform: uppercase; color: var(--noir);
             transition: color 0.2s ease;
         }
-        .nav-links a:hover { color: var(--matcha); }
+        .nav-links a:hover { color: var(--noir); }
         .nav-cta {
             font-size: 11px; font-weight: 500; letter-spacing: 0.15em;
-            text-transform: uppercase; background: var(--matcha); color: white;
+            text-transform: uppercase; background: var(--noir); color: white;
             padding: 10px 24px; border-radius: 2px;
             transition: background 0.2s ease;
         }
-        .nav-cta:hover { background: var(--matcha-dark); }
-        .nav-mobile-toggle { display: none; background: none; font-size: 20px; color: var(--matcha); }
+        .nav-cta:hover { background: var(--noir-dark); }
+        .nav-mobile-toggle { display: none; background: none; font-size: 20px; color: var(--noir); }
 
         /* ========== BREADCRUMB ========== */
         .breadcrumb {
@@ -94,7 +95,7 @@
         .breadcrumb a {
             color: var(--grey); transition: color 0.2s ease;
         }
-        .breadcrumb a:hover { color: var(--matcha); }
+        .breadcrumb a:hover { color: var(--noir); }
         .breadcrumb .sep { margin: 0 8px; opacity: 0.4; }
         .breadcrumb .current { color: var(--noir); }
 
@@ -128,13 +129,13 @@
         }
         .gallery-thumb img { width: 100%; height: 100%; object-fit: cover; }
         .gallery-thumb:hover { border-color: var(--stone); }
-        .gallery-thumb.active { border-color: var(--matcha); }
+        .gallery-thumb.active { border-color: var(--noir); }
 
         /* Product Info */
         .product-info { padding-top: 8px; }
         .product-tagline {
             font-family: 'Playfair Display', serif;
-            font-size: 14px; font-style: italic; color: var(--matcha);
+            font-size: 14px; font-style: italic; color: var(--noir);
             margin-bottom: 16px; line-height: 1.6;
         }
         .product-title {
@@ -146,7 +147,7 @@
         }
         .product-price .coming-soon {
             font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase;
-            color: var(--matcha); font-weight: 400;
+            color: var(--noir); font-weight: 400;
         }
         .product-price .strikethrough {
             text-decoration: line-through; opacity: 0.4; margin-right: 8px;
@@ -176,11 +177,11 @@
         }
         .colour-swatch:hover {
             transform: scale(1.12);
-            border-color: var(--matcha);
+            border-color: var(--noir);
         }
         .colour-swatch.active {
-            border-color: var(--matcha);
-            box-shadow: 0 0 0 2px white, 0 0 0 3.5px var(--matcha);
+            border-color: var(--noir);
+            box-shadow: 0 0 0 2px white, 0 0 0 3.5px var(--noir);
         }
 
         /* Size selector */
@@ -194,21 +195,21 @@
             background: transparent;
         }
         .size-option:hover, .size-option.active {
-            border-color: var(--matcha); color: var(--matcha);
+            border-color: var(--noir); color: var(--noir);
         }
 
         /* Vote button */
         .vote-btn {
             display: block; width: 100%; padding: 16px 0;
-            background: var(--matcha); color: white;
+            background: var(--noir); color: white;
             font-size: 12px; font-weight: 500; letter-spacing: 0.18em;
             text-transform: uppercase; border-radius: 2px;
             margin-top: 8px; transition: all 0.2s ease;
             text-align: center;
         }
-        .vote-btn:hover { background: var(--matcha-dark); transform: translateY(-1px); }
+        .vote-btn:hover { background: var(--noir-dark); transform: translateY(-1px); }
         .vote-btn.voted {
-            background: var(--accent); pointer-events: none;
+            background: var(--noir); pointer-events: none;
         }
         .vote-btn.voted::after { content: " ✓"; }
         .vote-count-detail {
@@ -340,12 +341,12 @@
         .footer-email-form input::placeholder { color: rgba(255,255,255,0.4); }
         .footer-email-form input:focus { border-color: rgba(255,255,255,0.35); }
         .footer-email-form button {
-            padding: 10px 20px; background: var(--matcha); color: white;
+            padding: 10px 20px; background: var(--noir); color: white;
             font-size: 11px; font-weight: 500; letter-spacing: 0.1em;
             text-transform: uppercase; border-radius: 2px;
             transition: background 0.2s ease;
         }
-        .footer-email-form button:hover { background: var(--matcha-dark); }
+        .footer-email-form button:hover { background: var(--noir-dark); }
         .footer-bottom {
             max-width: 1200px; margin: 48px auto 0; padding-top: 24px;
             border-top: 1px solid rgba(255,255,255,0.08);
@@ -372,7 +373,7 @@
         }
         .vote-modal h4 {
             font-family: 'Playfair Display', serif; font-size: 20px;
-            color: var(--matcha); margin-bottom: 8px;
+            color: var(--noir); margin-bottom: 8px;
         }
         .vote-modal p {
             font-size: 13px; color: var(--grey); margin-bottom: 20px; line-height: 1.6;
@@ -382,24 +383,24 @@
             font-size: 14px; border-radius: 2px; outline: none; margin-bottom: 12px;
             font-weight: 300;
         }
-        .vote-modal input:focus { border-color: var(--matcha); }
+        .vote-modal input:focus { border-color: var(--noir); }
         .vote-modal button {
-            width: 100%; padding: 14px; background: var(--matcha); color: white;
+            width: 100%; padding: 14px; background: var(--noir); color: white;
             font-size: 12px; font-weight: 500; letter-spacing: 0.15em;
             text-transform: uppercase; border-radius: 2px; transition: background 0.2s;
         }
-        .vote-modal button:hover { background: var(--matcha-dark); }
+        .vote-modal button:hover { background: var(--noir-dark); }
         .vote-modal .skip {
             display: block; margin-top: 12px; font-size: 12px;
             color: var(--grey); cursor: pointer;
         }
-        .vote-modal .skip:hover { color: var(--matcha); }
+        .vote-modal .skip:hover { color: var(--noir); }
 
         /* ========== BACK TO COLLECTION ========== */
         .back-link {
             display: inline-flex; align-items: center; gap: 8px;
             font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase;
-            color: var(--matcha); font-weight: 400;
+            color: var(--noir); font-weight: 400;
             margin-bottom: 12px;
             transition: opacity 0.2s ease;
         }
@@ -450,7 +451,7 @@
         }
         .mobile-nav-close {
             position: absolute; top: 20px; right: 24px;
-            background: none; font-size: 24px; color: var(--matcha);
+            background: none; font-size: 24px; color: var(--noir);
         }
     </style>
 </head>
@@ -479,7 +480,7 @@
             <a href="index.html#collection" onclick="toggleMobileNav()">Collection</a>
             <a href="index.html#story" onclick="toggleMobileNav()">Our Story</a>
             <a href="index.html#lookbook" onclick="toggleMobileNav()">Lookbook</a>
-            <a href="index.html#waitlist" onclick="toggleMobileNav()" style="color:var(--matcha);">Join Waitlist</a>
+            <a href="index.html#waitlist" onclick="toggleMobileNav()" style="color:var(--noir);">Join Waitlist</a>
         </div>
     </div>
 

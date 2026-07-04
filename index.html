@@ -48,6 +48,7 @@
             --accent: #4A6350;
             --bone: #F5F1EA;
             --noir: #1C1917;
+            --noir-dark: #100E0C;
             --grey: #9A9387;
             --grey-light: #C9C2B6;
         }
@@ -67,7 +68,7 @@
         }
         .nav-logo {
             font-family: 'Playfair Display', serif;
-            font-size: 18px; font-weight: 500; color: var(--matcha);
+            font-size: 18px; font-weight: 500; color: var(--noir);
             letter-spacing: 0.15em; text-transform: uppercase;
         }
         .nav-links { display: flex; gap: 32px; align-items: center; }
@@ -76,15 +77,15 @@
             text-transform: uppercase; color: var(--noir);
             transition: color 0.2s ease;
         }
-        .nav-links a:hover { color: var(--matcha); }
+        .nav-links a:hover { color: var(--noir); }
         .nav-cta {
             font-size: 11px; font-weight: 500; letter-spacing: 0.15em;
-            text-transform: uppercase; background: var(--matcha); color: white;
+            text-transform: uppercase; background: var(--noir); color: white;
             padding: 10px 24px; border-radius: 2px;
             transition: background 0.2s ease;
         }
-        .nav-cta:hover { background: var(--matcha-dark); }
-        .nav-mobile-toggle { display: none; background: none; font-size: 20px; color: var(--matcha); }
+        .nav-cta:hover { background: var(--noir-dark); }
+        .nav-mobile-toggle { display: none; background: none; font-size: 20px; color: var(--noir); }
 
         /* ========== HERO ========== */
         .hero {
@@ -106,27 +107,27 @@
             font-size: clamp(42px, 6vw, 72px); font-weight: 400;
             line-height: 1.05; color: var(--noir); margin-bottom: 24px;
         }
-        .hero-title em { font-style: italic; color: var(--matcha); }
+        .hero-title em { font-style: italic; color: var(--noir); }
         .hero-subtitle {
             font-size: 16px; line-height: 1.8; color: var(--grey);
             max-width: 420px; margin-bottom: 40px; font-weight: 300;
         }
         .hero-buttons { display: flex; gap: 16px; flex-wrap: wrap; }
         .btn-primary {
-            display: inline-block; padding: 14px 36px; background: var(--matcha);
+            display: inline-block; padding: 14px 36px; background: var(--noir);
             color: white; font-size: 12px; font-weight: 500;
             letter-spacing: 0.15em; text-transform: uppercase;
             border-radius: 2px; transition: all 0.2s ease;
         }
-        .btn-primary:hover { background: var(--matcha-dark); transform: translateY(-1px); }
+        .btn-primary:hover { background: var(--noir-dark); transform: translateY(-1px); }
         .btn-secondary {
             display: inline-block; padding: 14px 36px; background: transparent;
-            color: var(--matcha); font-size: 12px; font-weight: 500;
+            color: var(--noir); font-size: 12px; font-weight: 500;
             letter-spacing: 0.15em; text-transform: uppercase;
-            border: 1px solid var(--matcha); border-radius: 2px;
+            border: 1px solid var(--noir); border-radius: 2px;
             transition: all 0.2s ease;
         }
-        .btn-secondary:hover { background: var(--matcha); color: white; }
+        .btn-secondary:hover { background: var(--noir); color: white; }
 
         /* Hero decorative elements */
         .hero-deco-1 {
@@ -213,7 +214,7 @@
             position: absolute; top: 12px; left: 12px;
             background: white; padding: 6px 12px; font-size: 10px;
             letter-spacing: 0.12em; text-transform: uppercase;
-            font-weight: 500; color: var(--matcha); border-radius: 1px;
+            font-weight: 500; color: var(--noir); border-radius: 1px;
         }
         .product-wishlist {
             position: absolute; top: 12px; right: 12px;
@@ -221,10 +222,10 @@
             display: flex; align-items: center; justify-content: center;
             transition: all 0.2s ease; cursor: pointer;
         }
-        .product-wishlist:hover { background: var(--matcha); }
+        .product-wishlist:hover { background: var(--noir); }
         .product-wishlist:hover svg { stroke: white; }
-        .product-wishlist.active { background: var(--accent); }
-        .product-wishlist.active svg { stroke: white; fill: var(--accent); }
+        .product-wishlist.active { background: var(--noir); }
+        .product-wishlist.active svg { stroke: white; fill: var(--noir); }
         .product-name {
             font-family: 'Playfair Display', serif; font-size: 16px;
             font-weight: 400; color: var(--noir); margin-bottom: 6px;
@@ -235,7 +236,7 @@
         }
         .product-status {
             font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase;
-            color: var(--matcha); font-weight: 400;
+            color: var(--noir); font-weight: 400;
         }
         .product-variants {
             display: flex; gap: 8px; margin-top: 8px; flex-wrap: wrap;
@@ -248,11 +249,11 @@
         }
         .color-swatch:hover {
             transform: scale(1.15);
-            border-color: var(--matcha);
+            border-color: var(--noir);
         }
         .color-swatch.active {
-            border-color: var(--matcha);
-            box-shadow: 0 0 0 2px white, 0 0 0 3.5px var(--matcha);
+            border-color: var(--noir);
+            box-shadow: 0 0 0 2px white, 0 0 0 3.5px var(--noir);
         }
         .variant-count {
             font-size: 11px; color: var(--grey); font-weight: 300;
@@ -267,19 +268,19 @@
             color: var(--grey); transition: all 0.2s ease; cursor: pointer;
         }
         .size-tag:hover, .size-tag.active {
-            border-color: var(--matcha); color: var(--matcha);
+            border-color: var(--noir); color: var(--noir);
         }
         .product-vote-btn {
             display: block; width: 100%; padding: 10px 0;
-            background: var(--matcha); color: white;
+            background: var(--noir); color: white;
             font-size: 11px; font-weight: 500; letter-spacing: 0.15em;
             text-transform: uppercase; border-radius: 2px;
             margin-top: 12px; transition: all 0.2s ease;
             text-align: center;
         }
-        .product-vote-btn:hover { background: var(--matcha-dark); transform: translateY(-1px); }
+        .product-vote-btn:hover { background: var(--noir-dark); transform: translateY(-1px); }
         .product-vote-btn.voted {
-            background: var(--accent); pointer-events: none;
+            background: var(--noir); pointer-events: none;
         }
         .product-vote-btn.voted::after { content: " ✓"; }
         .vote-count {
@@ -310,18 +311,18 @@
             font-size: 14px; border-radius: 2px; outline: none; margin-bottom: 12px;
             font-weight: 300;
         }
-        .vote-modal input:focus { border-color: var(--matcha); }
+        .vote-modal input:focus { border-color: var(--noir); }
         .vote-modal button {
-            width: 100%; padding: 14px; background: var(--matcha); color: white;
+            width: 100%; padding: 14px; background: var(--noir); color: white;
             font-size: 12px; font-weight: 500; letter-spacing: 0.15em;
             text-transform: uppercase; border-radius: 2px; transition: background 0.2s;
         }
-        .vote-modal button:hover { background: var(--matcha-dark); }
+        .vote-modal button:hover { background: var(--noir-dark); }
         .vote-modal .skip {
             display: block; margin-top: 12px; font-size: 12px;
             color: var(--grey); cursor: pointer;
         }
-        .vote-modal .skip:hover { color: var(--matcha); }
+        .vote-modal .skip:hover { color: var(--noir); }
 
         /* ========== BRAND STORY ========== */
         .story-bg { background: var(--bone); }
@@ -356,7 +357,7 @@
 
         /* ========== WAITLIST / EMAIL CAPTURE ========== */
         .waitlist-bg {
-            background: var(--matcha);
+            background: var(--noir);
             color: white;
         }
         .waitlist-inner {
@@ -385,7 +386,7 @@
         .waitlist-form input::placeholder { color: rgba(255,255,255,0.5); }
         .waitlist-form input:focus { border-color: rgba(255,255,255,0.5); background: rgba(255,255,255,0.12); }
         .waitlist-form button {
-            padding: 16px 32px; background: white; color: var(--matcha);
+            padding: 16px 32px; background: white; color: var(--noir);
             font-size: 12px; font-weight: 600; letter-spacing: 0.18em;
             text-transform: uppercase; border-radius: 2px;
             transition: all 0.2s ease;
@@ -496,12 +497,12 @@
         .footer-email-form input::placeholder { color: rgba(255,255,255,0.4); }
         .footer-email-form input:focus { border-color: rgba(255,255,255,0.35); }
         .footer-email-form button {
-            padding: 10px 20px; background: var(--matcha); color: white;
+            padding: 10px 20px; background: var(--noir); color: white;
             font-size: 11px; font-weight: 500; letter-spacing: 0.1em;
             text-transform: uppercase; border-radius: 2px;
             transition: background 0.2s ease;
         }
-        .footer-email-form button:hover { background: var(--matcha-dark); }
+        .footer-email-form button:hover { background: var(--noir-dark); }
         .footer-bottom {
             max-width: 1200px; margin: 48px auto 0; padding-top: 24px;
             border-top: 1px solid rgba(255,255,255,0.08);
@@ -556,14 +557,14 @@
             border-radius: 2px; outline: none;
             transition: border-color 0.2s ease;
         }
-        .popup-form input:focus { border-color: var(--matcha); }
+        .popup-form input:focus { border-color: var(--noir); }
         .popup-form button {
-            padding: 14px; background: var(--matcha); color: white;
+            padding: 14px; background: var(--noir); color: white;
             font-size: 12px; font-weight: 500; letter-spacing: 0.15em;
             text-transform: uppercase; border-radius: 2px;
             transition: background 0.2s ease;
         }
-        .popup-form button:hover { background: var(--matcha-dark); }
+        .popup-form button:hover { background: var(--noir-dark); }
         .popup-disclaimer {
             font-size: 11px; color: var(--grey-light); margin-top: 12px;
             font-weight: 300;
@@ -628,7 +629,7 @@
         }
         .mobile-nav-close {
             position: absolute; top: 20px; right: 24px;
-            background: none; font-size: 24px; color: var(--matcha);
+            background: none; font-size: 24px; color: var(--noir);
         }
     </style>
 </head>
@@ -657,7 +658,7 @@
             <a href="#collection" onclick="toggleMobileNav()">Collection</a>
             <a href="#story" onclick="toggleMobileNav()">Our Story</a>
             <a href="#lookbook" onclick="toggleMobileNav()">Lookbook</a>
-            <a href="#waitlist" onclick="toggleMobileNav()" style="color:var(--matcha);">Join Waitlist</a>
+            <a href="#waitlist" onclick="toggleMobileNav()" style="color:var(--noir);">Join Waitlist</a>
         </div>
     </div>
 
