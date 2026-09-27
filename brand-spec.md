@@ -24,7 +24,7 @@ Catalogue replacement only. Preserve the current Softline Theory identity while 
 
 ## Asset rules
 - Product imagery comes only from the owner-supplied Canva designs extracted on 2026-09-27.
-- Product/colour/dimension labels are preserved exactly as supplied.
+- Product/colour/dimension labels are preserved as supplied unless the creative owner explicitly approves a correction. Both source and display labels remain in the manifest.
 - No material, price, capacity, quality, testimonial, sales or demand claims are invented.
 - Colour variants use image thumbnails rather than guessed colour swatches.
 - Product images are emitted as responsive WebP files: 480px thumbnails and 1200px detail images.

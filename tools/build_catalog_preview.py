@@ -5,6 +5,7 @@ import hashlib
 import html
 import json
 import re
+import shutil
 from pathlib import Path
 from typing import Any
 
@@ -21,6 +22,13 @@ PRODUCT_NAMES = {
     "lattice": "The Lattice",
     "sera": "The Sera",
 }
+
+# Explicit creative-owner corrections. Keep both the original Canva label and
+# the approved display label in catalog-manifest.json for auditability.
+LABEL_CORRECTIONS = {
+    ("mabel-mini-tote", "Cappucino"): "Cappuccino",
+}
+PREVIEW_VERSION = "v2"
 
 ROLE_WORDS = {
     "dimension": "dimension",
@@ -115,25 +123,25 @@ def document_head(title: str, description: str) -> str:
 
 
 def nav() -> str:
-    return """<a class="skip-link" href="#main">Skip to content</a>
+    return f"""<a class="skip-link" href="#main">Skip to content</a>
 <nav class="site-nav" aria-label="Primary">
   <div class="nav-inner">
     <a class="brand" href="index.html">Softline Theory</a>
     <div class="nav-links">
       <a href="index.html#collection">Collection</a>
       <a href="index.html#lookbook">Lookbook</a>
-      <span class="preview-pill">Private preview</span>
+      <span class="preview-pill">Private preview {PREVIEW_VERSION}</span>
     </div>
   </div>
 </nav>"""
 
 
 def footer() -> str:
-    return """<footer class="site-footer">
+    return f"""<footer class="site-footer">
   <div class="footer-inner">
     <div>
       <div class="footer-brand">Softline Theory</div>
-      <p class="footer-copy">Catalogue preview built from owner-supplied Canva assets.</p>
+      <p class="footer-copy">Catalogue preview {PREVIEW_VERSION} built from owner-supplied Canva assets.</p>
     </div>
     <div class="footer-right">Not published · September 2026</div>
   </div>
@@ -330,6 +338,8 @@ def build(source_manifest: Path, destination: Path) -> None:
         raise RuntimeError("Expected 74 extracted pages")
 
     output_root = destination / "assets" / "img" / "catalog"
+    if output_root.exists():
+        shutil.rmtree(output_root)
     products: list[dict[str, Any]] = []
     compact_sources: list[dict[str, Any]] = []
 
@@ -337,9 +347,11 @@ def build(source_manifest: Path, destination: Path) -> None:
         slug = design["slug"]
         pages: list[dict[str, Any]] = []
         for page in design["pages"]:
-            role = classify(page["label"])
+            source_label = page["label"]
+            display_label = LABEL_CORRECTIONS.get((slug, source_label), source_label)
+            role = classify(display_label)
             source = source_image(page)
-            page_slug = f"{int(page['page_number']):02d}-{slugify(page['label'])}"
+            page_slug = f"{int(page['page_number']):02d}-{slugify(display_label)}"
             relative_root = Path("assets") / "img" / "catalog" / slug
             full_rel = (relative_root / f"{page_slug}-1200.webp").as_posix()
             thumb_rel = (relative_root / f"{page_slug}-480.webp").as_posix()
@@ -350,7 +362,8 @@ def build(source_manifest: Path, destination: Path) -> None:
             source_sha = hashlib.sha256(source.read_bytes()).hexdigest()
             pages.append({
                 "page_number": int(page["page_number"]),
-                "label": page["label"],
+                "source_label": source_label,
+                "label": display_label,
                 "role": role,
                 "measurements": unique_measurements(page.get("text", "")),
                 "full": full_rel,
