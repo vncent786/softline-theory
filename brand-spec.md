@@ -1,10 +1,10 @@
-# Softline Theory — preview design system
+# Softline Theory — production design system
 
 ## Scope
-Catalogue replacement only. Preserve the current Softline Theory identity while replacing the three legacy products with the eight owner-supplied Canva catalogues. No production publication is included.
+Production catalogue release. Preserve the current Softline Theory identity while replacing the three legacy products with the eight owner-supplied Canva catalogues.
 
 ## Position
-- Narrative role: launch-preview storefront and exact catalogue review
+- Narrative role: launch storefront and exact catalogue presentation
 - Viewing distance: phone and laptop
 - Visual temperature: quiet, warm, refined
 - Capacity: eight products, forty-five supplied colourways, lifestyle and dimension evidence

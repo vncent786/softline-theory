@@ -28,7 +28,7 @@ PRODUCT_NAMES = {
 LABEL_CORRECTIONS = {
     ("mabel-mini-tote", "Cappucino"): "Cappuccino",
 }
-PREVIEW_VERSION = "v2"
+SITE_VERSION = "v3"
 
 ROLE_WORDS = {
     "dimension": "dimension",
@@ -113,7 +113,7 @@ def document_head(title: str, description: str) -> str:
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{esc(title)}</title>
   <meta name="description" content="{esc(description)}">
-  <meta name="robots" content="noindex,nofollow">
+  <meta name="robots" content="index,follow">
   <meta name="theme-color" content="#F5F1EA">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -130,7 +130,7 @@ def nav() -> str:
     <div class="nav-links">
       <a href="index.html#collection">Collection</a>
       <a href="index.html#lookbook">Lookbook</a>
-      <span class="preview-pill">Private preview {PREVIEW_VERSION}</span>
+      <span class="preview-pill">Launching soon</span>
     </div>
   </div>
 </nav>"""
@@ -141,9 +141,9 @@ def footer() -> str:
   <div class="footer-inner">
     <div>
       <div class="footer-brand">Softline Theory</div>
-      <p class="footer-copy">Catalogue preview {PREVIEW_VERSION} built from owner-supplied Canva assets.</p>
+      <p class="footer-copy">Website {SITE_VERSION} · Owner-supplied product assets.</p>
     </div>
-    <div class="footer-right">Not published · September 2026</div>
+    <div class="footer-right">Singapore · September 2026</div>
   </div>
 </footer>"""
 
@@ -192,14 +192,14 @@ def build_home(products: list[dict[str, Any]], destination: Path) -> None:
             )
             + "</a>"
         )
-    body = f"""{document_head('Softline Theory — Eight-bag catalogue preview', 'Private preview of eight Softline Theory bag catalogues.')}
+    body = f"""{document_head('Softline Theory — Eight-bag collection', 'Explore eight Softline Theory bag catalogues, including supplied colours, lifestyle views and dimensions.')}
 <body>
 {nav()}
 <main id="main">
   <section class="hero">
     <div class="hero-inner">
       <div>
-        <p class="eyebrow">Eight-bag catalogue preview</p>
+        <p class="eyebrow">The eight-bag collection</p>
         <h1>Softness,<br><em>structured.</em></h1>
         <p class="hero-copy">Eight everyday silhouettes, presented with their supplied colours, lifestyle views and dimensions.</p>
         <div class="button-row">
@@ -232,7 +232,7 @@ def build_home(products: list[dict[str, Any]], destination: Path) -> None:
 
   <section class="catalog-statement">
     <h2>Eight bags. {total_colours} supplied colourways.</h2>
-    <p>No guessed materials, prices or performance claims. This preview is limited to what the approved catalogue assets actually show.</p>
+    <p>No guessed materials, prices or performance claims. Every visible detail comes from the approved catalogue assets.</p>
   </section>
 
   <section class="section" id="lookbook">
@@ -247,9 +247,9 @@ def build_home(products: list[dict[str, Any]], destination: Path) -> None:
 
   <section class="section preview-note" id="waitlist">
     <div class="section-inner">
-      <p class="eyebrow">Review boundary</p>
-      <h2>Preview first. Publish only after approval.</h2>
-      <p>This version does not collect payments or customer details. It exists for catalogue, image-quality and mobile-speed review.</p>
+      <p class="eyebrow">Early access</p>
+      <h2>The collection is coming soon.</h2>
+      <p>Explore every supplied colour and dimension while we prepare confirmed pricing and availability for launch.</p>
     </div>
   </section>
 </main>
@@ -282,7 +282,7 @@ def build_product_page(product: dict[str, Any], products: list[dict[str, Any]], 
         )
     related_products = [item for item in products if item["slug"] != product["slug"]][:3]
     related_cards = "".join(card(item, related=True) for item in related_products)
-    body = f"""{document_head(product['name'] + ' — Softline Theory', f'Private catalogue preview for {product["name"]}.')}
+    body = f"""{document_head(product['name'] + ' — Softline Theory', f'Explore the supplied colours, lifestyle views and dimensions for {product["name"]}.')}
 <body>
 {nav()}
 <main id="main">
@@ -295,7 +295,7 @@ def build_product_page(product: dict[str, Any], products: list[dict[str, Any]], 
       <div class="thumbnail-strip" aria-label="Product views">{''.join(thumbs)}</div>
     </div>
     <div class="product-info">
-      <p class="product-kicker">Catalogue preview</p>
+      <p class="product-kicker">Product catalogue</p>
       <h1 class="product-title">{esc(product['name'])}</h1>
       <p class="product-status">Coming soon · <span data-active-image-label>{esc(main['label'])}</span></p>
       <div class="divider"></div>
@@ -308,7 +308,7 @@ def build_product_page(product: dict[str, Any], products: list[dict[str, Any]], 
       <div class="divider"></div>
       <p class="detail-heading">Catalogue contents</p>
       <p class="catalog-copy">{len(product['colour_pages'])} colour pages · {len(product['support_pages'])} lifestyle, display or comparison pages · {len(product['dimension_pages'])} dimension page{'s' if len(product['dimension_pages']) != 1 else ''}.</p>
-      <p class="source-note">This preview uses only the images and labels supplied in the approved Canva design. Material, price, weight, capacity and availability have not been published because they were not included in the source catalogue.</p>
+      <p class="source-note">This page uses only the images and labels supplied in the approved catalogue. Material, price, weight, capacity and availability are not shown because they were not included in the source.</p>
     </div>
   </section>
 
